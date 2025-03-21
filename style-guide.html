@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Dog Supplement Company - Style Guide</title>
+    <style>
+        /* This is for the style guide only, to be embedded in WordPress */
+        .dog-style-guide {
+            font-family: 'Futura', 'Trebuchet MS', sans-serif;
+            line-height: 1.5;
+            color: #2b2d42;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        
+        .dog-style-guide * {
+            box-sizing: border-box;
+        }
+        
+        /* Style Guide Variables */
+        .dog-style-guide {
+            /* Primary Colors */
+            --navy: #2e355c;
+            --gray: #8c8a91;
+            
+            /* Secondary Colors */
+            --cream: #f7f6f2;
+            --pale-blue: #e6e9f0;
+            --beige: #e8e0d5;
+            
+            /* Accent Colors */
+            --mint: #c2d8cd;
+            --terracotta: #d9a282;
+            --lavender: #d8d6e5;
+            --accent-mint: #c2d8cd;
+            
+            /* Text Colors */
+            --dark-text: #2b2d42;
+            --medium-text: #585763;
+            --light-text: #ffffff;
+            
+            /* Functional Colors */
+            --success: #7cb797;
+            --error: #e07a5f;
+            --info: #81a4cd;
+            --sale: #d9794e;
+            
+            /* Spacing */
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-xxl: 48px;
+            --space-xxxl: 64px;
+            
+            /* Border Radius */
+            --radius-pill: 999px;
+        }
+        
+        /* Import Font Awesome for icons */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+        /* Typography */
+        .dog-style-guide h1, 
+        .dog-style-guide h2, 
+        .dog-style-guide h3, 
+        .dog-style-guide h4, 
+        .dog-style-guide h5 {
+            font-family: 'Le Monde Courrier Std 2', 'Courier New', monospace;
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            color: var(--navy);
+        }
+
+        .dog-style-guide h1 {
+            font-size: 42px;
+            line-height: 48px;
+            letter-spacing: -0.5px;
+            margin-bottom: var(--space-xl);
+        }
+
+        .dog-style-guide h2 {
+            font-size: 32px;
+            line-height: 40px;
+            letter-spacing: -0.3px;
+            margin-top: var(--space-xxl);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-xs);
+            position: relative;
+        }
+        
+        .dog-style-guide h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60px;
+            height: 4px;
+            background: var(--sale);
+            border-radius: var(--radius-pill);
+        }
+
+        .dog-style-guide h3 {
+            font-size: 24px;
+            line-height: 32px;
+            letter-spacing: -0.2px;
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .dog-style-guide h4 {
+            font-size: 20px;
+            line-height: 28px;
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-md);
+        }
+
+        .dog-style-guide h5 {
+            font-size: 18px;
+            line-height: 24px;
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-sm);
+        }
+
+        .dog-style-guide p {
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.2px;
+            margin-bottom: var(--space-md);
+        }
+
+        .dog-style-guide small {
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .dog-style-guide .section {
+            margin-bottom: var(--space-xxl);
+            padding: var(--space-lg);
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(46, 53, 92, 0.08);
+        }
+
+        /* Color Swatches */
+        .dog-style-guide .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .dog-style-guide .color-category {
+            margin-bottom: var(--space-xl);
+        }
+
+        .dog-style-guide .color-swatch {
+            height: 100px;
+            border-radius: 8px;
+            margin-bottom: var(--space-xs);
+            display: flex;
+            align-items: flex-end;
+            padding: var(--space-sm);
+            color: var(--light-text);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .dog-style-guide .color-swatch:hover {
+            transform: translateY(-4px);
+        }
+
+        .dog-style-guide .color-info {
+            background-color: rgba(255,255,255,0.9);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 4px;
+            color: var(--dark-text);
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .dog-style-guide .color-name {
+            font-weight: 500;
+        }
+
+        .dog-style-guide .color-hex {
+            font-family: monospace;
+        }
+
+        /* Typography Examples */
+        .dog-style-guide .typography-example {
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--pale-blue);
+        }
+
+        .dog-style-guide .font-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-md);
+        }
+
+        .dog-style-guide .font-name {
+            font-weight: 500;
+            margin-right: var(--space-lg);
+            min-width: 120px;
+        }
+
+        .dog-style-guide .font-usage {
+            color: var(--medium-text);
+            font-size: 14px;
+        }
+
+        .dog-style-guide .heading-examples, 
+        .dog-style-guide .body-examples, 
+        .dog-style-guide .special-examples {
+            background-color: var(--pale-blue);
+            padding: var(--space-lg);
+            border-radius: 8px;
+            margin-top: var(--space-md);
+        }
+
+        .dog-style-guide .body-examples p {
+            margin-bottom: var(--space-md);
+        }
+
+        .dog-style-guide .special-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .dog-style-guide .special-text-example {
+            background-color: white;
+            padding: var(--space-md);
+            border-radius: 4px;
+        }
+
+        /* UI Elements */
+        .dog-style-guide .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .dog-style-guide .button-primary, 
+        .dog-style-guide .button-secondary, 
+        .dog-style-guide .button-tertiary, 
+        .dog-style-guide .button-outline, 
+        .dog-style-guide .button-shadow {
+            text-decoration: none;
+        }
+
+        .dog-style-guide .button-primary {
+            background-color: var(--navy);
+            color: var(--light-text);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-family: 'Futura', 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .dog-style-guide .button-primary:hover {
+            background-color: #3a4275;
+        }
+
+        .dog-style-guide .button-primary:active {
+            background-color: #252c4e;
+        }
+
+        .dog-style-guide .button-secondary {
+            background-color: transparent;
+            color: var(--navy);
+            border: 2px solid var(--navy);
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-family: 'Futura', 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .dog-style-guide .button-secondary:hover {
+            background-color: rgba(46, 53, 92, 0.1);
+            box-shadow: 0 3px 8px rgba(46, 53, 92, 0.15);
+        }
+
+        .dog-style-guide .button-tertiary {
+            background-color: transparent;
+            color: var(--navy);
+            border: none;
+            padding: 10px 20px;
+            font-family: 'Futura', 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(46, 53, 92, 0.2);
+            border-radius: 4px;
+        }
+
+        .dog-style-guide .button-tertiary:hover {
+            box-shadow: 0 4px 8px rgba(46, 53, 92, 0.3);
+            transform: translateY(-1px);
+        }
+        
+        .dog-style-guide .button-outline {
+            background-color: white;
+            color: var(--navy);
+            border: 1px solid var(--navy);
+            padding: 11px 24px;
+            border-radius: 4px;
+            font-family: 'Futura', 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-block;
+            box-shadow: 0 2px 6px rgba(46, 53, 92, 0.1);
+        }
+
+        .dog-style-guide .button-outline:hover {
+            background-color: var(--pale-blue);
+            box-shadow: 0 4px 8px rgba(46, 53, 92, 0.2);
+        }
+        
+        .dog-style-guide .button-shadow {
+            background-color: white;
+            color: var(--navy);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-family: 'Futura', 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(46, 53, 92, 0.25);
+        }
+
+        .dog-style-guide .button-shadow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(46, 53, 92, 0.35);
+        }
+
+        .dog-style-guide .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .dog-style-guide .button-label {
+            margin-top: var(--space-sm);
+            font-size: 14px;
+            color: var(--medium-text);
+        }
+
+        /* Icons */
+        .dog-style-guide .icon-sizes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xl);
+            margin-top: var(--space-lg);
+            justify-content: center;
+        }
+        
+        .dog-style-guide .icon-size-example {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .dog-style-guide .icon-xs {
+            font-size: 16px;
+        }
+        
+        .dog-style-guide .icon-sm {
+            font-size: 20px;
+        }
+        
+        .dog-style-guide .icon-md {
+            font-size: 24px;
+        }
+        
+        .dog-style-guide .icon-lg {
+            font-size: 32px;
+        }
+        
+        .dog-style-guide .icon-xl {
+            font-size: 48px;
+        }
+        
+        .dog-style-guide .icon-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--navy);
+            transition: all 0.3s ease;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .dog-style-guide .icon-circle:hover {
+            background-color: var(--mint);
+            transform: scale(1.1);
+            color: var(--navy);
+        }
+        
+        .dog-style-guide .circle-xs {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .dog-style-guide .circle-sm {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .dog-style-guide .circle-md {
+            width: 48px;
+            height: 48px;
+        }
+        
+        .dog-style-guide .circle-lg {
+            width: 64px;
+            height: 64px;
+        }
+        
+        .dog-style-guide .circle-xl {
+            width: 84px;
+            height: 84px;
+        }
+        
+        .dog-style-guide .icon-animations {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+        
+        .dog-style-guide .animation-example {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: var(--space-md);
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(46, 53, 92, 0.05);
+        }
+        
+        .dog-style-guide .icon-anim {
+            font-size: 28px;
+            color: var(--navy);
+            margin-bottom: var(--space-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .dog-style-guide .grow:hover {
+            transform: scale(1.3);
+        }
+        
+        .dog-style-guide .rotate:hover {
+            transform: rotate(15deg);
+        }
+        
+        .dog-style-guide .pulse {
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        
+        .dog-style-guide .pulse:hover {
+            animation-name: pulse-animation;
+        }
+        
+        @keyframes pulse-animation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .dog-style-guide .color-shift:hover {
+            color: var(--terracotta);
+        }
+        
+        .dog-style-guide .bounce:hover {
+            animation-name: bounce-animation;
+            animation-duration: 0.8s;
+            animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+        }
+        
+        @keyframes bounce-animation {
+            0% { transform: translateY(0); }
+            20% { transform: translateY(-8px); }
+            40% { transform: translateY(0); }
+            60% { transform: translateY(-5px); }
+            80% { transform: translateY(0); }
+        }
+        
+        .dog-style-guide .shake:hover {
+            animation-name: shake-animation;
+            animation-duration: 0.6s;
+            animation-timing-function: ease-in-out;
+        }
+        
+        @keyframes shake-animation {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(-4px); }
+            40% { transform: translateX(4px); }
+            60% { transform: translateX(-2px); }
+            80% { transform: translateX(2px); }
+            100% { transform: translateX(0); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .dog-style-guide {
+                padding: var(--space-md);
+            }
+
+            .dog-style-guide h1 {
+                font-size: 32px;
+                line-height: 40px;
+            }
+
+            .dog-style-guide h2 {
+                font-size: 28px;
+                line-height: 36px;
+            }
+
+            .dog-style-guide .color-grid, 
+            .dog-style-guide .buttons-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .dog-style-guide .special-examples {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Start of style guide content - this is what you should paste into WordPress -->
+    <div class="dog-style-guide">
+        <h1>Natural Dog Supplement Company</h1>
+        <p>Website Style Guide</p>
+
+        <section class="section" id="typography">
+            <h2>Typography</h2>
+            
+            <div class="typography-example">
+                <div class="font-info">
+                    <div class="font-name">Le Monde Courrier Std 2</div>
+                    <div class="font-usage">Used for all headings and titles</div>
+                </div>
+                
+                <div class="heading-examples">
+                    <h1>H1: Main Page Titles (42px)</h1>
+                    <h2>H2: Section Headers (32px)</h2>
+                    <h3>H3: Content Headers (24px)</h3>
+                    <h4>H4: Subheadings (20px)</h4>
+                    <h5>H5: Small Headers (18px)</h5>
+                </div>
+            </div>
+            
+            <div class="typography-example">
+                <div class="font-info">
+                    <div class="font-name">Futura</div>
+                    <div class="font-usage">Used for body text and general content</div>
+                </div>
+                
+                <div class="body-examples">
+                    <p>Primary body text is 16px with 24px line height. This is used for most of the content on the website, providing good readability while maintaining a clean and professional appearance.</p>
+                    <small>Secondary body text is 14px with 20px line height. This smaller text is used for things like product descriptions, disclaimers, and other supplementary information.</small>
+                </div>
+            </div>
+            
+            <div class="typography-example" style="border-bottom: none;">
+                <div class="font-info">
+                    <div class="font-name">Special Text Styles</div>
+                    <div class="font-usage">Used for specific UI elements</div>
+                </div>
+                
+                <div class="special-examples">
+                    <div class="special-text-example">
+                        <div style="font-family: 'Futura', 'Trebuchet MS', sans-serif; font-weight: 500; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--navy);">
+                            BUTTON TEXT
+                        </div>
+                        <small>Futura Medium, 14px, uppercase, tracking +1px</small>
+                    </div>
+                    
+                    <div class="special-text-example">
+                        <div style="font-family: 'Futura', 'Trebuchet MS', sans-serif; font-weight: 500; font-size: 16px; letter-spacing: 0.5px; color: var(--navy);">
+                            Navigation Text
+                        </div>
+                        <small>Futura Medium, 16px, tracking +0.5px</small>
+                    </div>
+                    
+                    <div class="special-text-example">
+                        <div style="font-family: 'Le Monde Courrier Std 2', 'Courier New', monospace; font-weight: 500; font-size: 20px; color: var(--navy);">
+                            $29.99
+                        </div>
+                        <small>Le Monde Courrier, Medium, 20px (Product Price)</small>
+                    </div>
+                    
+                    <div class="special-text-example">
+                        <div style="font-family: 'Le Monde Courrier Std 2', 'Courier New', monospace; font-weight: 700; font-size: 16px; text-transform: uppercase; color: var(--sale);">
+                            SALE 15% OFF
+                        </div>
+                        <small>Le Monde Courrier, Bold, 16px, uppercase (Sale/Discount)</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="colors">
+            <h2>Color Palette</h2>
+            
+            <div class="color-category">
+                <h3>Primary Colors</h3>
+                <div class="color-grid">
+                    <div>
+                        <div class="color-swatch" style="background-color: #2e355c;">
+                            <div class="color-info">
+                                <div class="color-name">Navy Blue</div>
+                                <div class="color-hex">#2e355c</div>
+                            </div>
+                        </div>
+                        <small>Primary brand color for buttons, key headings, footer</small>
+                    </div>
+                    
+                    <div>
+                        <div class="color-swatch" style="background-color: #8c8a91;">
+                            <div class="color-info">
+                                <div class="color-name">Gray</div>
+                                <div class="color-hex">#8c8a91</div>
+                            </div>
+                        </div>
+                        <small>Navigation, secondary text, borders</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="color-category">
+                <h3>Secondary Colors</h3>
+                <div class="color-grid">
+                    <div>
+                        <div class="color-swatch" style="background-color: #f7f6f2; border: 1px solid #e6e9f0;">
+                            <div class="color-info">
+                                <div class="color-name">Soft Cream</div>
+                                <div class="color-hex">#f7f6f2</div>
+                            </div>
+                        </div>
+                        <small>Primary background color</small>
+                    </div>
+                    
+                    <div>
+                        <div class="color-swatch" style="background-color: #e6e9f0; border: 1px solid #e6e9f0;">
+                            <div class="color-info">
+                                <div class="color-name">Pale Blue</div>
+                                <div class="color-hex">#e6e9f0</div>
+                            </div>
+                        </div>
+                        <small>Secondary background, cards, hover states</small>
+                    </div>
+                    
+                    <div>
+                        <div class="color-swatch" style="background-color: #e8e0d5; border: 1px solid #e6e9f0;">
+                            <div class="color-info">
+                                <div class="color-name">Warm Beige</div>
+                                <div class="color-hex">#e8e0d5</div>
+                            </div>
+                        </div>
+                        <small>Accent backgrounds, callout sections</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="color-category">
+                <h3>Accent Colors</h3>
+                <div class="color-grid">
+                    <div>
+                        <div class="color-swatch" style="background-color: #c2d8cd;">
+                            <div class="color-info">
+                                <div class="color-name">Mint Green</div>
+                                <div class="color-hex">#c2d8cd</div>
+                            </div>
+                        </div>
+                        <small>Highlights, success messages, "natural" emphasis</small>
+                    </div>
+                    
+                    <div>
+                        <div class="color-swatch" style="background-color: #d9a282;">
+                            <div class="color-info">
+                                <div class="color-name">Terracotta</div>
+                                <div class="color-hex">#d9a282</div>
+                            </div>
+                        </div>
+                        <small>Call-to-action elements, highlights, promotions</small>
+                    </div>
+                    
+                    <div>
+                        <div class="color-swatch" style="background-color: #d8d6e5;">
+                            <div class="color-info">
+                                <div class="color-name">Soft Lavender</div>
+                                <div class="color-hex">#d8d6e5</div>
+                            </div>
+                        </div>
+                        <small>Subtle accents, dividers, secondary buttons</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="color-category">
+                <h3>Text Colors</h3>
+                <div class="color-grid">
+                    <div>
+                        <div class="color-swatch" style="background-color: #2b2d42;">
+                            <div class="color-info" style="color: #ffffff;">
+                                <div class="color-name">Dark Text</div>
+                                <div class="color-hex">#2b2d42</div>
+                            </div>
+                        </div>
+                        <small>Body text, important information</small>
+                    </div>
+                    
+                    <div>
+                        <div class="color-swatch" style="background-color: #585763;">
+                            <div class="color-info" style="color: #ffffff;">
+                                <div class="color-name">Medium Text</div>
+                                <div class="color-hex">#585763</div>
+                            </div>
+                        </div>
+                        <small>Secondary information, descriptions</small>
+                    </div>
+                    
+                    <div>
+                        <div class="color-swatch" style="background-color: #ffffff; border: 1px solid #e6e9f0;">
+                            <div class="color-info">
+                                <div class="color-name">Light Text</div>
+                                <div class="color-hex">#ffffff</div>
+                            </div>
+                        </div>
+                        <small>Text on dark backgrounds</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="color-category" style="margin-bottom: 0;">
+                <h3>Functional Colors</h3>
+                <div class="color-grid">
+                    <div>
+                        <div class="color-swatch" style="background-color: #7cb797;">
+                            <div class="color-info">
+                                <div class="color-name">Success</div>
+                                <div class="color-hex">#7cb797</div>
+                            </div>
+                        </div>
+                        <small>Success messages and indicators</small>
+                    </div>
+                    
+                    <div>
+                        <div class="color-swatch" style="background-color: #e07a5f;">
+                            <div class="color-info">
+                                <div class="color-name">Error/Alert</div>
+                                <div class="color-hex">#e07a5f</div>
+                            </div>
+                        </div>
+                        <small>Error messages and alerts</small>
+                    </div>
+                    
+                    <div>
+                        <div class="color-swatch" style="background-color: #81a4cd;">
+                            <div class="color-info">
+                                <div class="color-name">Information</div>
+                                <div class="color-hex">#81a4cd</div>
+                            </div>
+                        </div>
+                        <small>Information messages</small>
+                    </div>
+                    
+                    <div>
+                        <div class="color-swatch" style="background-color: #d9794e;">
+                            <div class="color-info">
+                                <div class="color-name">Sale/Discount</div>
+                                <div class="color-hex">#d9794e</div>
+                            </div>
+                        </div>
+                        <small>Sale and discount indicators</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="buttons">
+            <h2>UI Elements</h2>
+            
+            <h3>Buttons</h3>
+            <div class="buttons-grid">
+                <div class="button-container">
+                    <a href="#" class="button-primary">Primary Button</a>
+                    <div class="button-label">Primary Button</div>
+                </div>
+                
+                <div class="button-container">
+                    <a href="#" class="button-secondary">Secondary Button</a>
+                    <div class="button-label">Secondary Button</div>
+                </div>
+                
+                <div class="button-container">
+                    <a href="#" class="button-tertiary">Tertiary Button</a>
+                    <div class="button-label">Tertiary Button</div>
+                </div>
+                
+                <div class="button-container">
+                    <a href="#" class="button-outline">Outline Button</a>
+                    <div class="button-label">Outline Button</div>
+                </div>
+                
+                <div class="button-container">
+                    <a href="#" class="button-shadow">Shadow Button</a>
+                    <div class="button-label">Shadow Button</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="icons">
+            <h2>Icons</h2>
+            
+            <p>Icons should follow these guidelines:</p>
+            <ul style="margin-bottom: var(--space-lg); padding-left: var(--space-xl);">
+                <li>Simple, outlined icons with 2px stroke weight</li>
+                <li>Corner radius of 2px for square icons</li>
+                <li>Consistent visual weight and style</li>
+                <li>Base size of 24px (16px for smaller elements)</li>
+            </ul>
+            
+            <h3>Icon States & Sizes</h3>
+            
+            <div class="icon-sizes">
+                <div class="icon-size-example">
+                    <div class="icon-circle circle-xs">
+                        <i class="fas fa-paw icon-xs"></i>
+                    </div>
+                    <div class="icon-label">XS - 16px</div>
+                </div>
+                
+                <div class="icon-size-example">
+                    <div class="icon-circle circle-sm">
+                        <i class="fas fa-paw icon-sm"></i>
+                    </div>
+                    <div class="icon-label">SM - 20px</div>
+                </div>
+                
+                <div class="icon-size-example">
+                    <div class="icon-circle circle-md">
+                        <i class="fas fa-paw icon-md"></i>
+                    </div>
+                    <div class="icon-label">MD - 24px</div>
+                </div>
+                
+                <div class="icon-size-example">
+                    <div class="icon-circle circle-lg">
+                        <i class="fas fa-paw icon-lg"></i>
+                    </div>
+                    <div class="icon-label">LG - 32px</div>
+                </div>
+                
+                <div class="icon-size-example">
+                    <div class="icon-circle circle-xl">
+                        <i class="fas fa-paw icon-xl"></i>
+                    </div>
+                    <div class="icon-label">XL - 48px</div>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: var(--space-xxl);">Icon Hover Animations</h3>
+            <p>Hover over each icon to see its animation effect.</p>
+            
+            <div class="icon-animations">
+                <div class="animation-example">
+                    <i class="fas fa-bone icon-anim grow"></i>
+                    <div class="icon-label">Grow</div>
+                </div>
+                
+                <div class="animation-example">
+                    <i class="fas fa-heart icon-anim rotate"></i>
+                    <div class="icon-label">Rotate</div>
+                </div>
+                
+                <div class="animation-example">
+                    <i class="fas fa-seedling icon-anim pulse"></i>
+                    <div class="icon-label">Pulse</div>
+                </div>
+                
+                <div class="animation-example">
+                    <i class="fas fa-dog icon-anim color-shift"></i>
+                    <div class="icon-label">Color Shift</div>
+                </div>
+                
+                <div class="animation-example">
+                    <i class="fas fa-bone icon-anim bounce"></i>
+                    <div class="icon-label">Bounce</div>
+                </div>
+                
+                <div class="animation-example">
+                    <i class="fas fa-shield-alt icon-anim shake"></i>
+                    <div class="icon-label">Shake</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- End of style guide content -->
+</body>
+</html>
