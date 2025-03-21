@@ -322,23 +322,24 @@ small {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    background: var(--pale-blue);
-    border-radius: var(--radius-md);
+    background: #f5f5f5;
+    border-radius: 8px;
     padding: 10px 15px;
 }
 
 .quantity-selector label {
     font-weight: 600;
     margin-right: 15px;
+    font-family: 'Tahoma', Geneva, sans-serif;
 }
 
 .quantity-controls {
     display: flex;
     align-items: center;
-    border: 2px solid var(--pale-blue);
-    border-radius: var(--radius-sm);
+    border-radius: 6px;
     overflow: hidden;
-    background: var(--light-text);
+    background: #ffffff;
+    border: 1px solid #d2d2d2;
 }
 
 .quantity-btn {
@@ -347,15 +348,16 @@ small {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--pale-blue);
+    background: #f5f5f5;
     border: none;
     font-size: 1.2rem;
     cursor: pointer;
     transition: background 0.2s;
+    color: #333;
 }
 
 .quantity-btn:hover {
-    background: var(--lavender);
+    background: #e6e6e6;
 }
 
 .quantity-input {
@@ -365,6 +367,7 @@ small {
     border: none;
     font-size: 1rem;
     font-weight: 600;
+    font-family: 'Tahoma', Geneva, sans-serif;
 }
 
 .quantity-input::-webkit-outer-spin-button,
@@ -376,7 +379,7 @@ small {
 .add-to-cart {
     width: 100%;
     padding: 15px;
-    background: #4cb04f;
+    background: #2e7d32;
     color: var(--light-text);
     border: none;
     border-radius: var(--radius-md);
@@ -394,7 +397,7 @@ small {
 }
 
 .add-to-cart:hover {
-    background: #3d9040; /* Slightly darker green */
+    background: #266c2b; /* Slightly darker green */
 }
 
 .add-to-cart i {
@@ -469,20 +472,21 @@ small {
     display: flex;
     align-items: center;
     padding: 15px;
-    border: 1px dashed var(--mint);
+    border: 1px dashed #2e7d32;
     border-radius: var(--radius-md);
-    background-color: rgba(194, 216, 205, 0.1);
+    background-color: rgba(46, 125, 50, 0.05);
     margin-top: 20px;
 }
 
 .guarantee-icon {
-    color: var(--navy);
+    color: #2e7d32;
     font-size: 2rem;
     margin-right: 15px;
 }
 
 .guarantee-text {
     font-size: 0.9rem;
+    font-family: 'Tahoma', Geneva, sans-serif;
 }
 
 .guarantee-text strong {
