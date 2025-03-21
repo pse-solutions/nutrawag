@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urinary Care+ for Dogs | NutraWag</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+/* Review text */
+.jdgm-carousel-title  {
+    color: #ffffff !important;
+}
+.jdgm-carousel-item__product-title {
+color: #ffffff !important;
+}
+
+.jdgm-carousel-item__review-title{
+    color: #ffffff !important;
+}
+
+
+.jdgm-carousel-item__review-body p {
+ color: #ffffff !important;
+}
+
+.jdgm-carousel-item__reviewer-name {
+ color: #ffffff !important;
+}
+
+/*Featured Product Showcase*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Futura PT', 'Futura', 'Avenir', 'Century Gothic', sans-serif;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        .showcase-container {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e6eef8 100%);
+            color: #2e355c;
+            padding: 80px 20px 10px;
+            position: relative;
+            overflow: hidden;
+            min-height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .product-showcase {
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0 10px;
+        }
+        
+        .product-image-container {
+            width: 600px;
+            height: auto;
+            text-align: center;
+            z-index: 5;
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .product-info-container {
+            text-align: center;
+            z-index: 6;
+            position: relative;
+            margin-bottom: -20px;
+        }
+        
+        .product-image {
+            width: 600px;
+            height: 600px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            max-height: 600px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+        
+        .product-image:hover img {
+            transform: scale(1.02);
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.2));
+        }
+        
+        .product-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2e355c;
+            letter-spacing: 0.5px;
+            font-family: 'le-monde-courrier-std-2';
+        }
+        
+        .product-tagline {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #2e355c;
+            opacity: 0.8;
+            max-width: 400px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .features-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        
+        /* Connecting lines removed */
+        
+        .section-title {
+            position: absolute;
+            font-size: 22px;
+            font-weight: 700;
+            color: #2e355c;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            z-index: 15;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 18px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .section-title:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+        
+        .section-title i {
+            margin-right: 8px;
+            color: #00a9e2;
+        }
+        
+        .left-title {
+            top: -4%;
+            left: 21%;
+        }
+        
+        .right-title {
+            top: -7%;
+            right: 19%;
+        }
+        
+        /* Common styling for feature items */
+        .feature-item {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 15;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .feature-item:hover {
+            transform: scale(1.08) translateY(-5px);
+            z-index: 20;
+        }
+        
+        .feature-circle {
+            width: 85px;
+            height: 85px;
+            border-radius: 10%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 3px solid white;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .feature-item:hover .feature-circle {
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+            border-color: rgba(0, 169, 226, 0.5);
+        }
+        
+        .feature-circle::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 169, 226, 0.1) 0%, rgba(92, 196, 187, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .feature-item:hover .feature-circle::after {
+            opacity: 1;
+        }
+        
+        .feature-circle img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            border-radius: 10%;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-item:hover .feature-circle img {
+            transform: scale(1.05);
+        }
+        
+        .feature-content {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2e355c;
+            width: 200px;
+            text-align: center;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+        
+        .feature-description {
+            font-size: 14px;
+            font-weight: 400;
+            color: #2e355c;
+            opacity: 0.8;
+            width: 200px;
+            text-align: center;
+            line-height: 1.4;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+            opacity: 0;
+        }
+        
+        .feature-item:hover .feature-description {
+            max-height: 100px;
+            opacity: 1;
+            margin-top: 8px;
+        }
+        
+        /* Left features specific styling */
+        .left-feature {
+            flex-direction: row-reverse;
+        }
+        
+        .left-feature .feature-content {
+            margin-right: 20px;
+            text-align: right;
+        }
+        
+        .left-feature .feature-name,
+        .left-feature .feature-description {
+            text-align: right;
+        }
+        
+        /* Right features specific styling */
+        .right-feature {
+            flex-direction: row;
+        }
+        
+        .right-feature .feature-content {
+            margin-left: 20px;
+            text-align: left;
+        }
+        
+        .right-feature .feature-name,
+        .right-feature .feature-description {
+            text-align: left;
+        }
+        
+        /* Feature positioning */
+        #left1 {
+            top: 15%;
+            left: 12%;
+            animation-delay: 0.1s;
+        }
+        
+        #left2 {
+            top: 35%;
+            left: 7%;
+            animation-delay: 0.2s;
+        }
+        
+        #left3 {
+            top: 55%;
+            left: 5%;
+            animation-delay: 0.3s;
+        }
+        
+        #left4 {
+            top: 75%;
+            left: 12%;
+            animation-delay: 0.4s;
+        }
+        
+        #right1 {
+            top: 12%;
+            right: 12%;
+            animation-delay: 0.5s;
+        }
+        
+        #right2 {
+            top: 29%;
+            right: 5%;
+            animation-delay: 0.6s;
+        }
+        
+        #right3 {
+            top: 47%;
+            right: 3%;
+            animation-delay: 0.7s;
+        }
+        
+        #right4 {
+            top: 65%;
+            right: 5%;
+            animation-delay: 0.8s;
+        }
+        
+        #right5 {
+            top: 82%;
+            right: 12%;
+            animation-delay: 0.9s;
+        }
+        
+        /* Modal */
+        .feature-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.75);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .feature-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .feature-modal.active .modal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #2e355c;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            background-color: rgba(0,0,0,0.1);
+        }
+        
+        .modal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .modal-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 10%;
+            overflow: hidden;
+            margin-right: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .modal-icon img, 
+        .modal-icon svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .modal-title {
+            color: #2e355c;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .modal-body {
+            color: #2e355c;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .modal-body p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-section {
+            text-align: center;
+            padding: 20px 0 50px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e6eef8 100%);
+            margin-top: -20px;
+        }
+        
+        .footer-section .product-name {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section .product-tagline {
+            margin-bottom: 20px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00a9e2 0%, #5cc4bb 100%);
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 15px rgba(0, 169, 226, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 0px 0px 20px 0px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0, 169, 226, 0.4);
+        }
+        
+        .disclaimer {
+            font-size: 12px;
+            color: #2e355c;
+            opacity: 0.7;
+            max-width: 800px;
+            margin: 20px auto 0;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 169, 226, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(0, 169, 226, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 169, 226, 0);
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .product-showcase {
+                height: auto;
+                min-height: 600px;
+            }
+            
+            .product-image, .product-image-container {
+                width: 400px;
+            }
+            
+            .product-image {
+                height: 400px;
+            }
+            
+            .product-image img {
+                max-height: 400px;
+            }
+            
+            .product-name {
+                font-size: 24px;
+            }
+            
+            /* Adjust the curved positioning for medium screens */
+            #left1 { left: 15%; }
+            #left2 { left: 10%; }
+            #left3 { left: 10%; }
+            #left4 { left: 15%; }
+            
+            #right1 { right: 15%; }
+            #right2 { right: 10%; }
+            #right3 { right: 8%; }
+            #right4 { right: 10%; }
+            #right5 { right: 15%; }
+            
+            .left-title {
+                left: 6%;
+            }
+            
+            .right-title {
+                right: 6%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .showcase-container {
+                padding: 40px 20px;
+            }
+            
+            .product-showcase {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            /* Connecting lines removed */
+            
+            .section-title {
+                position: relative;
+                display: block;
+                margin: 0px auto 10px auto !important;
+                text-align: center;
+            }
+            
+            .left-title, .right-title {
+                left: auto;
+                right: auto;
+                top: auto;
+            }
+            
+            .features-container {
+                position: relative;
+                height: auto;
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .feature-item {
+                position: relative;
+                margin: 15px auto;
+                transform: none !important;
+                opacity: 1;
+                width: 100%;
+                max-width: 320px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+                padding: 15px;
+                border-radius: 10px;
+                background-color: white;
+            }
+            
+            .feature-item:hover {
+                transform: translateY(-5px) !important;
+            }
+            
+            .feature-item:nth-child(odd) {
+                align-self: flex-start;
+            }
+            
+            .feature-item:nth-child(even) {
+                align-self: flex-end;
+            }
+            
+            .left-feature, .right-feature {
+                flex-direction: row;
+            }
+            
+            .feature-content {
+                margin-left: 15px !important;
+                margin-right: 0 !important;
+            }
+            
+            .feature-name, .feature-description,
+            .left-feature .feature-name, .left-feature .feature-description {
+                text-align: left;
+            }
+            
+            .feature-description {
+                max-height: none;
+                opacity: 1;
+                margin-top: 8px;
+            }
+            
+            .product-image-container, .product-image {
+                margin: 20px auto;
+                width: 250px;
+            }
+            
+            .product-image {
+                height: 250px;
+            }
+            
+            .product-image img {
+                max-height: 250px;
+            }
+            
+            .product-name {
+                font-size: 20px;
+                margin-top: 15px;
+            }
+            
+            .product-tagline {
+                font-size: 14px;
+                margin-top: 5px;
+            }
+            
+            .feature-circle {
+                width: 65px;
+                height: 65px;
+            }
+            
+            .feature-circle img {
+                width: 55px;
+                height: 55px;
+            }
+            
+            .feature-name {
+                font-size: 15px;
+                width: auto;
+            }
+            
+            .feature-description {
+                font-size: 13px;
+                width: auto;
+            }
+            
+            .modal-content {
+                padding: 25px;
+            }
+        }
+
+       </style>
+</head>
+<body>
+/*Featured Product Showcase*/
+
+<section class="showcase-container">
+        <div class="product-showcase">
+            <!-- Section Titles -->
+            <h3 class="section-title left-title">
+                <i>✦</i> Key Benefits
+            </h3>
+            <h3 class="section-title right-title">
+                <i>✦</i> Key Ingredients
+            </h3>
+            
+            <!-- No connecting lines -->
+            
+            <!-- Center Product Image -->
+            <div class="product-image-container">
+                <div class="product-image">
+                    <img src="https://nutrawag.ca/wp-content/uploads/2025/03/For-Testing2.png" alt="Product Bottle">
+                </div>
+            </div>
+            
+            <!-- Product Info (now empty, we can remove it) -->
+            <div class="product-info-container">
+            </div>
+            
+            <!-- All Features Container -->
+            <div class="features-container">
+                <!-- Left Features -->
+                <div class="feature-item left-feature" id="left1">
+                    <div class="feature-circle">
+                        <svg height="50" viewBox="0 0 479.632 479.632" width="50" xmlns="http://www.w3.org/2000/svg"><path d="M419.463 286.91c-4.866 172.581-210.939 243.658-324.66 129.48-67.2-67.47-73.75-178.19-12.82-255.82L192.053 25.9c19.51-23.87 55.99-23.87 75.49 0l110.08 134.67c12.758 16.237 23.427 35.145 30.85 56.26v.01q3.015 8.64 5.22 17.46v.01c7.002 28.146 5.77 52.6 5.77 52.6" fill="#d1e7ff"/><path d="M263.124 55.915c-8.625 5.647-1.528-1.691-121.141 144.655-38.248 48.731-49.696 110.231-36.865 165.686 5.252 22.701-25.526 35.295-37.526 15.322-39.586-65.884-37.919-154.361 14.391-221.008L192.053 25.9c19.51-23.87 55.99-23.87 75.49 0 7.646 9.357 5.69 23.396-4.419 30.015" fill="#e8f3ff"/><path d="M416.863 314.56c-12.07 74.22-63.39 125.91-125.27 146.91-27.38-33.85-28.31-84.2-.03-120.22l54.77-67.01c9.71-11.87 27.86-11.87 37.57 0z" fill="#b9dcff"/><path d="M312.173 449.93c-26.36-26.46-28.93-69.89-5.03-100.33l43.17-52.82c7.65-9.36 21.96-9.36 29.61 0 37.591 45.987 28.729 35.144 43.17 52.82 23.9 30.44 21.33 73.87-5.03 100.33-28.592 28.704-76.869 29.021-105.89 0" fill="#d1e7ff"/><path d="M326.233 263.67v25.19c0 8.83-7.17 16-16 16h-36.81c-8.84 0-16 7.16-16 16v36.8c0 8.84-7.17 16-16 16h-25.19c-8.84 0-16-7.16-16-16v-36.8c0-8.84-7.17-16-16-16h-36.81c-8.84 0-16-7.17-16-16v-25.19c0-8.84 7.16-16 16-16h36.81c8.83 0 16-7.17 16-16v-36.81c0-8.84 7.16-16 16-16h25.19c8.83 0 16 7.16 16 16v36.81c0 8.83 7.16 16 16 16h36.81c8.83 0 16 7.16 16 16" fill="#b9dcff"/><path d="M382.717 300.199c6.072 7.428 5.723 18.336-1.072 25.109-1.015 1.012 2.221-2.877-44.503 54.292a77 77 0 0 0-10.402 17.646c-8.302 19.699-38.095 11.512-35.445-9.7 1.668-13.35 6.863-26.504 15.847-37.946l43.17-52.82c7.65-9.36 21.96-9.36 29.61 0z" fill="#e8f3ff"/><path d="M249.42 231.667v-36.808c0-4.411-3.589-8-8-8h-25.19c-4.411 0-8 3.589-8 8v36.808c0 13.233-10.767 24-24 24h-36.808c-4.411 0-8 3.589-8 8v25.191c0 4.411 3.589 8 8 8h36.808c13.233 0 24 10.766 24 24v36.808c0 4.411 3.589 8 8 8h25.19c4.411 0 8-3.589 8-8v-36.808a8 8 0 0 1 16 0v36.808c0 13.233-10.767 24-24 24h-25.19c-13.233 0-24-10.767-24-24v-36.808c0-4.411-3.589-8-8-8h-36.808c-13.233 0-24-10.766-24-24v-25.191c0-13.234 10.767-24 24-24h36.808c4.411 0 8-3.589 8-8v-36.808c0-13.233 10.767-24 24-24h25.19c13.233 0 24 10.767 24 24v36.808c0 4.411 3.589 8 8 8h36.808a8 8 0 0 1 0 16H273.42c-13.233 0-24-10.767-24-24m196.838 150.834a8 8 0 0 0-9.258-6.503 8 8 0 0 0-6.504 9.258c3.804 21.766-2.963 43.833-18.101 59.031-25.665 25.766-68.916 25.744-94.559 0-23.847-23.941-25.755-62.485-4.452-89.689l43.121-52.757c4.454-5.448 12.775-5.439 17.221 0l32.01 39.162c4.038 4.937 12.089 3.383 13.887-2.853 18.843-65.438 2.588-135.213-35.809-182.644L273.742 20.836c-22.73-27.807-65.196-27.755-87.883 0-.085.104-110.09 134.69-110.172 134.795-63.314 80.672-56.73 195.949 13.447 266.403 49.832 50.03 124.025 69.255 193.523 50.594a8 8 0 1 0-4.149-15.452c-64.141 17.22-132.358-.57-178.039-46.433-65.241-65.5-70.503-170.886-12.243-245.173L198.248 30.962c16.322-19.969 46.818-19.929 63.105 0l110.023 134.611c33.972 43.321 47.163 99.437 36.571 152.853l-21.831-26.709c-10.862-13.29-31.158-13.263-41.998 0l-43.172 52.819c-11.894 14.692-19.27 35.475-18.125 57.146 2.307 43.652 37.283 77.897 82.296 77.897 52.389 0 90.035-46.18 81.141-97.078" fill="#2e58ff"/></svg>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-name">Daily Urinary Support</div>
+                        <div class="feature-description">Promotes healthy kidney and bladder function for your dog's overall wellbeing</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item left-feature" id="left2">
+                    <div class="feature-circle">
+                        <svg height="50" viewBox="0 0 480.005 480.005" width="50" xmlns="http://www.w3.org/2000/svg"><path d="M439.746 185.005h-56.18c11.32-30.48 21.53-61.45 30.57-92.84 4.22-14.66-3.1-30.18-17.05-36.33-13.96-6.16-30.35-1.09-38.33 11.92a1302 1302 0 0 0-63.85 117.25H43.746c-8.84 0-16 7.16-16 16v16c0 8.84 7.16 16 16 16h12v33.05c0 66.52 42.47 123.13 101.78 144.18-10.23 11.86-18.64 25-24.91 39.2-4.68 10.63 2.99 22.57 14.6 22.57h189.06c11.61 0 19.28-11.94 14.6-22.57-6.27-14.2-14.68-27.34-24.91-39.2 59.31-21.05 101.78-77.66 101.78-144.18v-33.05h12c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16" fill="#d1e7ff"/><path d="M215.407 407.396c6.211 2.423 4.538 11.609-2.129 11.609h-4.583c-84.756 0-152.95-68.762-152.95-152.95v-33.05h54a6 6 0 0 1 6 6v27.05c0 65.571 41.44 118.631 99.662 141.341" fill="#e8f3ff"/><path d="M350.875 449.435c4.68 10.63-2.99 22.57-14.6 22.57h-189.06c-11.61 0-19.28-11.94-14.6-22.57 6.27-14.2 14.68-27.34 24.91-39.2 16 5.68 33.22 8.77 51.17 8.77h66.1c17.95 0 35.17-3.09 51.17-8.77 10.23 11.86 18.64 25 24.91 39.2" fill="#b9dcff"/><path d="M172.226 463.859c1.434 3.952-1.338 8.146-5.542 8.146h-19.469c-11.61 0-19.28-11.94-14.6-22.57 6.27-14.2 14.68-27.34 24.91-39.2a152 152 0 0 0 25.191 6.569c4.259.728 6.38 5.636 3.961 9.216a161.6 161.6 0 0 0-13.992 25.276c-1.874 4.246-1.864 8.689-.459 12.563" fill="#d1e7ff"/><path d="M455.746 201.005v16c0 8.84-7.16 16-16 16h-396c-8.84 0-16-7.16-16-16v-16c0-8.84 7.16-16 16-16h396c8.84 0 16 7.16 16 16" fill="#b9dcff"/><path d="M440.823 185.041c12.667.842 11.701 19.964-.994 19.964H83.745c-8.837 0-16 7.163-16 16v1.994c0 5.526-4.48 10.006-10.006 10.006H43.746c-8.837 0-16-7.163-16-16v-16c0-8.837 7.163-16 16-16 0 0 396.721.012 397.077.036" fill="#d1e7ff"/><path d="M397.086 55.835c13.95 6.15 21.27 21.67 17.05 36.33-9.04 31.39-19.25 62.36-30.57 92.84h-88.66c19.2-40 40.5-79.18 63.85-117.25 7.98-13.01 24.37-18.08 38.33-11.92" fill="#b9dcff"/><path d="M397.215 55.893c5 2.233 5.54 9.253.941 12.226a30.3 30.3 0 0 0-9.401 9.637 1296 1296 0 0 0-57.057 103.323 7.04 7.04 0 0 1-6.31 3.927h-30.483c19.2-40 40.5-79.18 63.85-117.25 8.01-13.059 24.478-18.108 38.46-11.863m-151.58-4.368c16.93 9.27 30.6 27.7 36.06 50.81 1.72 7.27-1.92 14.83-8.66 18.06-22.06 10.58-46.37 8.84-65-2.65-41.877-25.83-5.54-89.858 37.6-66.22" fill="#d1e7ff"/><path d="M224.091 113.727c2.81 4.924-2.392 10.626-7.605 8.398a64 64 0 0 1-8.451-4.379c-39.788-24.541-9.097-84.985 32.689-68.462 4.727 1.869 5.107 8.54.58 10.852-18.548 9.475-28.05 34.599-17.213 53.591" fill="#e8f3ff"/><path d="M36.455 27.215c13.97-13.31 35.68-20.75 59.35-18.94 7.46.57 13.55 6.32 14.59 13.73 3.39 24.23-5.64 46.86-22.24 61.13-37.318 32.077-87.302-21.982-51.7-55.92" fill="#d1e7ff"/><path d="M59.396 82.384c2.757 4.779-1.667 10.509-6.923 8.833-24.653-7.858-40.405-40.755-16.018-64.002 13.97-13.31 35.68-20.75 59.35-18.94 1.059.082 2.09.267 3.084.548 5.842 1.647 5.549 10.128-.352 11.548-12.636 3.041-23.738 8.899-32.082 16.844-14.822 14.13-14.808 31.739-7.059 45.169" fill="#e8f3ff"/><g fill="#2e58ff"><path d="M439.746 177.005H307.713c17.694-35.948 37.117-71.244 57.866-105.072 5.849-9.535 18.008-13.31 28.275-8.782 10.271 4.529 15.684 16.05 12.59 26.798a1291 1291 0 0 1-15.022 48.541 8 8 0 1 0 15.187 5.031 1304 1304 0 0 0 15.21-49.146c5.299-18.404-3.949-38.122-21.51-45.865-17.561-7.742-38.355-1.269-48.369 15.057-22.365 36.461-43.206 74.606-62.03 113.438H43.746c-13.234 0-24 10.766-24 24v16c0 13.234 10.766 24 24 24h4v25.048c0 64.275 38.446 122.255 96.743 147.625-7.698 10.195-14.144 21.092-19.189 32.531-7.018 15.911 4.539 33.795 21.914 33.795H336.28c17.388 0 28.927-17.894 21.912-33.795a161 161 0 0 0-4.732-9.809 8 8 0 1 0-14.166 7.437 145 145 0 0 1 4.26 8.83c2.371 5.377-1.467 11.338-7.273 11.338H147.213c-5.811 0-9.644-5.964-7.274-11.338 5.865-13.297 13.82-25.815 23.644-37.208 3.67-4.256 1.887-10.891-3.383-12.764-57.692-20.477-96.454-75.39-96.454-136.642v-33.048a8 8 0 0 0-8-8h-12c-4.411 0-8-3.589-8-8v-16c0-4.411 3.589-8 8-8h396c4.411 0 8 3.588 8 8v16c0 4.411-3.589 8-8 8H106.635a8 8 0 0 0 0 16h333.111c13.233 0 24-10.766 24-24v-16c0-13.234-10.767-24-24-24"/><path d="M427.847 260.363a8 8 0 0 0-8.117 7.88c-1.166 78.719-66.184 142.761-144.936 142.761 0 0-67.989-.009-68.931-.027-4.39-.077-8.065 3.432-8.148 7.849a8 8 0 0 0 7.849 8.148c1.042.02 69.23.03 69.23.03 86.915 0 159.617-69.599 160.934-158.524a8 8 0 0 0-7.881-8.117M31.571 87.852a121 121 0 0 0-3.574 14.773 8 8 0 0 0 6.5 9.26c4.36.766 8.5-2.158 9.26-6.5C47.924 81.6 59.998 60.149 78.46 44.395a8 8 0 1 0-10.385-12.171C55.494 42.959 45.346 56.05 38.101 71.163c-8.512-11.882-8.178-26.664 3.878-38.155C54.641 20.939 74.534 14.671 95.198 16.25c3.697.282 6.756 3.169 7.273 6.865 2.907 20.773-4.395 40.943-19.533 53.956a38 38 0 0 1-3.454 2.651c-6.535 4.435-3.318 14.621 4.5 14.621a7.97 7.97 0 0 0 4.485-1.381c20.259-13.749 34.132-41.452 29.849-72.064C116.765 9.81 107.554 1.146 96.414.296c-25.48-1.943-49.346 5.758-65.474 21.13-21.163 20.171-18.111 48.776.631 66.426m132.794-12.514c.593 4.378 4.626 7.45 9.002 6.853 2.785-.377 5.587-.641 8.394-.792-1.804 17.173 6.212 33.377 22.075 43.16 21.908 13.509 49.092 14.353 72.654 3.053 10.095-4.841 15.558-16.247 12.988-27.119-5.877-24.871-20.455-45.275-39.995-55.981-8.074-4.423-16.367-6.468-24.658-6.083a8 8 0 0 0-7.618 8.365c.206 4.414 3.966 7.821 8.365 7.618 5.313-.245 10.766 1.143 16.223 4.132 15.342 8.405 27.347 25.463 32.112 45.628.853 3.609-.972 7.399-4.337 9.013-18.911 9.071-40.346 8.231-57.337-2.245-14.442-8.905-15.486-21.352-14.36-29.171 15.82 1.569 30.682 6.626 44.136 14.991 3.736 2.322 8.675 1.199 11.018-2.57a8 8 0 0 0-2.57-11.018c-24.463-15.209-52.509-20.461-79.24-16.834a7.995 7.995 0 0 0-6.852 9"/><circle cx="129.745" cy="133.005" r="16"/><circle cx="164.745" cy="28.005" r="12"/></g></svg>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-name">Natural Herbal Formula</div>
+                        <div class="feature-description">Premium plant-based ingredients carefully selected for safety and effectiveness</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item left-feature" id="left3">
+                    <div class="feature-circle">
+                       <svg id="fi_3912318" enable-background="new 0 0 480.001 480.001" height="50" viewBox="0 0 480.001 480.001" width="50" xmlns="http://www.w3.org/2000/svg"><path d="m467.12 94.267-29.314-31.15c-2.82-2.997-7.459-3.363-10.713-.843-20.029 15.512-39.744 23.36-53.012 27.429-74.724-59.02-193.429-59.026-268.16 0-13.268-4.069-32.983-11.917-53.012-27.429-3.254-2.52-7.893-2.154-10.713.843l-29.314 31.15c-2.796 2.971-2.919 7.585-.261 10.68 15.767 18.363 31.676 33.019 45.95 44.496.578 0-11.29 20.892-11.29 53.12 0 54.24 33.71 102.05 84.98 130.28 37.885 20.869 65.274 55.679 76.377 95.792.966 3.489 4.103 5.928 7.723 5.928h47.28c3.62 0 6.757-2.439 7.723-5.928 11.103-40.113 38.492-74.923 76.377-95.792 75.044-41.32 102.717-117.592 73.68-183.4.193 0 23.745-18.623 45.96-44.496 2.657-3.095 2.535-7.709-.261-10.68z" fill="#b9dcff"></path><path d="m360.17 174.843c-14.97-42.64-63.1-73.84-120.17-73.84-62.11 0-113.63 36.96-123.35 85.39-12.667 62.75 46.951 118.61 123.35 118.61 84.311 0 142.75-66.004 120.17-130.16z" fill="#a2d0ff"></path><path d="m308.955 117.912c7.909 4.277 3.673 16.273-5.209 14.875-66.098-10.405-135.285 24.758-147.096 83.606-5.035 24.943 1.226 52.065 20.79 74.92-42.721-20.176-69.685-60.854-60.79-104.92 9.72-48.43 61.24-85.39 123.35-85.39 25.489 0 49.193 6.223 68.955 16.909z" fill="#8bc4ff"></path><path d="m360.17 174.843c22.762 64.673-36.526 130.16-120.17 130.16-75.983 0-136.077-55.56-123.35-118.61 12-6.13 26.63-11.46 43.56-13.29 55.02-5.95 82.94 30.58 135.03 27.01 16.52-1.14 38.86-6.54 64.93-25.27z" fill="#d1e7ff"></path><path d="m364.276 214.042c-.877 6.631-5.738 12.042-12.249 13.57-50.277 11.805-82.911-18.216-126.369-24.38-33.033-4.686-58.113 20.043-61.018 48.128-1.456 14.08-19.046 19.772-28.105 8.896-18.677-22.426-24.894-49.051-19.885-73.863 12-6.13 26.63-11.46 43.56-13.29 55.02-5.95 82.94 30.58 135.03 27.01 16.52-1.14 38.86-6.54 64.93-25.27 4.495 12.771 5.828 26.175 4.106 39.199z" fill="#e8f3ff"></path><path d="m431.274 133.091c1.733 3.28.928 7.344-1.892 9.754-2.7 2.308-5.354 4.507-7.952 6.598-.83 0-10.251-30.454-47.35-59.74 3.791-1.162 8.095-2.631 12.782-4.497 2.863-1.14 6.135-.534 8.399 1.556 14.879 13.736 27.1 29.458 36.013 46.329z" fill="#a2d0ff"></path><path d="m105.92 89.703c-20.94 16.53-37.29 36.91-47.34 59.74-.1 0-5.764-4.719-7.962-6.598-2.82-2.41-3.625-6.474-1.892-9.754 9.668-18.301 23.235-35.249 39.868-49.768 6.461 2.79 12.346 4.85 17.326 6.38z" fill="#a2d0ff"></path><path d="m272.52 47.682c11.03 1.532 9.794 17.819-1.342 17.764-132.259-.645-222.394 103.421-185.694 202.631 3.672 9.925-9.984 16.87-15.806 8.033-38.379-58.26-28.197-135.538 36.242-186.407 46.518-36.742 109.068-50.014 166.6-42.021z" fill="#d1e7ff"></path><g fill="#2e58ff"><path d="m136.122 325.84c-81.032-44.62-103.388-130.676-56.831-196.787 2.544-3.612 1.678-8.604-1.935-11.147-3.611-2.545-8.603-1.678-11.147 1.935-51.949 73.771-27.404 170.677 62.196 220.016 37.486 20.642 64.444 55.825 73.959 96.529.863 3.689 4.15 6.181 7.783 6.181 5.152 0 8.971-4.799 7.797-9.823-10.547-45.115-40.37-84.079-81.822-106.904z"></path><path d="m368.156 173.512c-.843-5.265-6.469-8.165-11.192-6.017-3.113 1.359-27.673 22.263-62.272 24.633-47.42 3.254-75.596-30.269-128.55-27.521-4.413.229-7.804 3.992-7.574 8.404.23 4.413 3.996 7.807 8.404 7.574 46.163-2.4 73.463 27.771 121.096 27.771 24.278 0 46.847-7.902 67.361-20.71 12.145 59.224-45.794 109.357-115.429 109.357-64.514 0-117-42.168-117-94s52.486-94 117-94c32.44 0 62.616 10.454 84.968 29.437 3.369 2.862 8.417 2.45 11.276-.919 2.86-3.368 2.449-8.416-.919-11.276-25.24-21.436-59.094-33.242-95.325-33.242-73.336 0-133 49.346-133 110s59.664 110 133 110c87.505 0 151.705-69.173 128.156-139.491z"></path><path d="m42.108 63.821c18.491 15.671 40.268 27.267 61.562 33.551 2.622.766 5.281.128 7.21-1.392 71.835-56.735 186.37-56.762 258.239 0 1.881 1.486 4.639 2.191 7.3 1.372 22.758-6.967 43.44-18.248 61.473-33.53 3.371-2.857 3.787-7.905.931-11.275-2.857-3.37-7.905-3.787-11.275-.932-15.329 12.992-32.775 22.798-51.908 29.189-76.064-57.388-194.061-58.257-271.278 0-19.133-6.39-36.579-16.197-51.908-29.189-3.371-2.855-8.419-2.438-11.275.932-2.858 3.368-2.441 8.416.929 11.274z"></path><path d="m14.176 94.368c-2.809-3.413-7.851-3.9-11.261-1.091-3.411 2.809-3.899 7.85-1.091 11.261 6.76 8.21 13.98 16.215 21.459 23.793 1.565 1.586 3.629 2.38 5.694 2.38 7.045 0 10.688-8.56 5.693-13.62-7.142-7.237-14.038-14.882-20.494-22.723z"></path><path d="m477.085 93.278c-3.411-2.808-8.452-2.32-11.261 1.091-12.589 15.289-26.583 29.514-41.675 42.41-2.213-4.204-4.622-8.338-7.26-12.374-2.417-3.698-7.375-4.736-11.073-2.319s-4.737 7.375-2.319 11.073c42.727 65.373 19.894 148.899-59.618 192.682-41.452 22.824-71.275 61.789-81.822 106.902-1.177 5.037 2.657 9.823 7.797 9.823 3.632 0 6.92-2.491 7.783-6.181 9.516-40.705 36.473-75.889 73.959-96.529 73.406-40.422 107.346-116.512 79.459-187.986 17.134-14.267 32.977-30.154 47.121-47.332 2.809-3.41 2.32-8.452-1.091-11.26z"></path></g></svg>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-name">Encourage Regular Flow</div>
+                        <div class="feature-description">Helps maintain healthy urinary tract flow and supports normal bladder function</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item left-feature" id="left4">
+                    <div class="feature-circle">
+                        <svg height="50" viewBox="0 0 479.975 479.975" width="50" xmlns="http://www.w3.org/2000/svg"><path d="M458.377 251.117a68.2 68.2 0 0 1 0-22.26l4.68-28.33a68.27 68.27 0 0 0-19.4-59.73l-20.45-20.17a68.5 68.5 0 0 1-13.08-18.01l-12.87-25.68a68.26 68.26 0 0 0-50.8-36.91l-28.4-4.3a68.5 68.5 0 0 1-21.17-6.88l-25.5-13.21a68.27 68.27 0 0 0-62.8 0l-25.5 13.21a68.5 68.5 0 0 1-21.17 6.88l-28.4 4.3a68.26 68.26 0 0 0-50.8 36.91l-12.87 25.68a68.5 68.5 0 0 1-13.08 18.01l-20.45 20.17a68.27 68.27 0 0 0-19.4 59.73l4.68 28.33a68.2 68.2 0 0 1 0 22.26l-4.68 28.33a68.27 68.27 0 0 0 19.4 59.73l20.45 20.17a68.5 68.5 0 0 1 13.08 18.01l12.87 25.68a68.26 68.26 0 0 0 50.8 36.91l28.4 4.3a68.5 68.5 0 0 1 21.17 6.88l25.5 13.21a68.27 68.27 0 0 0 62.8 0l25.5-13.21a68.5 68.5 0 0 1 21.17-6.88l28.4-4.3a68.26 68.26 0 0 0 50.8-36.91l12.87-25.68a68.5 68.5 0 0 1 13.08-18.01l20.45-20.17a68.27 68.27 0 0 0 19.4-59.73z" fill="#d1e7ff"/><path d="M393.175 96.622a259 259 0 0 0-39.715-3.442 7.9 7.9 0 0 1-4.597-1.537c-30.486-22.407-68.131-35.655-108.874-35.656-101.542 0-184.005 82.464-184.002 184.005.001 40.741 13.249 78.386 35.654 108.87a7.9 7.9 0 0 1 1.538 4.6 259 259 0 0 0 4.346 44.869c1.643 8.83-10.587 13.031-14.65 5.021-21.074-41.533-13.015-31.083-46.558-64.174a68.26 68.26 0 0 1-19.4-59.73l4.68-28.33a68.2 68.2 0 0 0 0-22.26l-4.68-28.33a68.27 68.27 0 0 1 19.4-59.73l20.45-20.17a68.5 68.5 0 0 0 13.08-18.01l12.87-25.68a68.26 68.26 0 0 1 50.8-36.91l28.4-4.3a68.5 68.5 0 0 0 21.17-6.88l25.5-13.21a68.27 68.27 0 0 1 62.8 0l25.5 13.21a68.5 68.5 0 0 0 21.17 6.88l28.4 4.3a68.26 68.26 0 0 1 50.8 36.91l4.238 8.458c2.877 5.739-1.986 12.272-8.32 11.226" fill="#e8f3ff"/><path d="M239.989 55.988c101.62 0 183.999 82.38 183.999 184s-82.38 184-184 184-184-82.376-184-183.996S138.369 55.988 239.989 55.988" fill="#b9dcff"/><path d="M327.149 94.252C204.374 105.507 105.54 203.123 94.244 327.139c-.695 7.628-10.841 9.825-14.606 3.154-15.054-26.675-23.65-57.484-23.651-90.302-.004-101.541 82.46-184.005 184.001-184.004 32.825 0 63.639 8.599 90.318 23.659 6.673 3.766 4.473 13.906-3.157 14.606" fill="#d1e7ff"/><g fill="#2e58ff"><path d="M466.273 249.814a60.2 60.2 0 0 1 0-19.652l4.681-28.334c4.033-24.407-4.072-49.352-21.681-66.726l-20.442-20.172a60.2 60.2 0 0 1-11.551-15.897l-12.868-25.677c-11.083-22.114-32.302-37.531-56.76-41.237l-28.395-4.305a60.1 60.1 0 0 1-18.689-6.072l-25.5-13.209c-21.966-11.378-48.194-11.378-70.16 0l-25.502 13.208a60.1 60.1 0 0 1-18.688 6.073l-28.395 4.304c-24.458 3.706-45.677 19.123-56.761 41.238L62.694 99.032a60.1 60.1 0 0 1-11.55 15.897l-20.442 20.172c-16.809 16.586-25.068 40.471-22.095 63.894a8.001 8.001 0 0 0 15.873-2.015c-2.35-18.508 4.177-37.383 17.46-50.489l20.442-20.172a76.2 76.2 0 0 0 14.617-20.118l12.867-25.675c8.759-17.477 25.527-29.659 44.854-32.589l28.395-4.303a76.1 76.1 0 0 0 23.65-7.686l25.502-13.208c17.357-8.99 38.083-8.99 55.442 0l25.501 13.208a76.1 76.1 0 0 0 23.65 7.686l28.395 4.303c19.327 2.93 36.095 15.112 44.854 32.588l12.868 25.676a76.1 76.1 0 0 0 14.617 20.118l20.442 20.172c13.915 13.73 20.319 33.441 17.132 52.729l-4.681 28.335a76.1 76.1 0 0 0 0 24.867l4.681 28.336c3.187 19.286-3.218 38.997-17.133 52.728l-20.442 20.172a76.1 76.1 0 0 0-14.617 20.118l-12.867 25.675c-8.759 17.477-25.527 29.659-44.854 32.589l-28.395 4.303a76.1 76.1 0 0 0-23.65 7.686l-25.502 13.208c-17.357 8.99-38.083 8.99-55.442 0l-25.501-13.208a76.1 76.1 0 0 0-23.65-7.686l-28.395-4.303c-19.327-2.93-36.095-15.112-44.854-32.588l-12.868-25.676a76.1 76.1 0 0 0-14.617-20.118L41.94 333.485c-13.915-13.73-20.319-33.441-17.132-52.729l3.794-22.963a8 8 0 0 0-6.589-9.196c-4.359-.725-8.477 2.229-9.197 6.589l-3.794 22.962c-4.033 24.407 4.072 49.352 21.681 66.726l20.442 20.172a60.1 60.1 0 0 1 11.55 15.897l12.868 25.677c11.083 22.114 32.302 37.531 56.76 41.237l28.395 4.305a60.1 60.1 0 0 1 18.689 6.072l25.501 13.208c21.965 11.377 48.194 11.378 70.16 0l25.502-13.208a60.1 60.1 0 0 1 18.689-6.073l28.395-4.304c24.458-3.706 45.677-19.123 56.761-41.238l12.867-25.676a60.2 60.2 0 0 1 11.551-15.897l20.441-20.172c17.609-17.374 25.714-42.318 21.681-66.725z"/><path d="M204.559 202.488c0-8.309-4.193-15.665-10.593-20.097 9.693-15.858-1.842-36.403-20.718-36.403h-21.26a8 8 0 0 0-8 8v65a8 8 0 0 0 8 8h27.857c13.627 0 24.714-10.991 24.714-24.5m-44.572-40.5h13.26c4.526 0 8.208 3.589 8.208 8s-3.682 8-8.208 8h-13.26zm0 32h19.857c4.805 0 8.714 3.813 8.714 8.5s-3.909 8.5-8.714 8.5h-19.857zm74 6h6.029c14.872 0 26.971-12.099 26.971-27.029 0-14.872-12.099-26.971-26.971-26.971h-14.029a8 8 0 0 0-8 8v65a8 8 0 0 0 16 0zm0-38h6.029c6.049 0 10.971 4.922 10.971 11.029 0 6.049-4.921 10.971-10.971 10.971h-6.029zm-42 172a8 8 0 0 0 8-8v-10.109l19.932 16.321a7.97 7.97 0 0 0 5.063 1.811c7.512 0 10.853-9.457 5.073-14.189l-16.857-13.804c11.396-3.153 19.789-13.624 19.789-26.059 0-14.872-12.099-26.971-26.971-26.971h-14.029a8 8 0 0 0-8 8v65a8 8 0 0 0 8 8m8-65h6.029c6.049 0 10.971 4.922 10.971 11.029 0 6.049-4.921 10.971-10.971 10.971h-6.029zm-35 0a8 8 0 0 0 0-16h-33a8 8 0 0 0-8 8v65a8 8 0 0 0 16 0v-22h16a8 8 0 0 0 0-16h-16v-19zm120 0a8 8 0 0 0 0-16h-33a8 8 0 0 0-8 8v65a8 8 0 0 0 8 8h33a8 8 0 0 0 0-16h-25v-17h17a8 8 0 0 0 0-16h-17v-16zm61 0a8 8 0 0 0 0-16h-33a8 8 0 0 0-8 8v65a8 8 0 0 0 8 8h33a8 8 0 0 0 0-16h-25v-17h17a8 8 0 0 0 0-16h-17v-16zm-49-50v-13h23v13a8 8 0 0 0 16 0V173.17c0-14.352-11.328-27.182-27.819-27.182-14.988 0-27.181 12.193-27.181 27.182v45.818a8 8 0 0 0 16 0m11.182-57c7.567 0 11.819 5.575 11.819 11.182v16.818h-23V173.17c-.001-6.167 5.015-11.182 11.181-11.182"/><path d="M406.492 182.803c1.435 4.179 5.983 6.41 10.165 4.969a8 8 0 0 0 4.968-10.164c-26.621-77.53-99.615-129.62-181.637-129.62-105.869 0-192 86.131-192 192s86.131 192 192 192c101.613 0 185.806-79.388 191.675-180.732a8 8 0 0 0-7.524-8.449c-4.397-.275-8.194 3.113-8.449 7.523-5.379 92.893-82.556 165.658-175.701 165.658-97.047 0-176-78.953-176-176s78.953-176 176-176c75.188 0 142.101 47.748 166.503 118.815"/></g></svg>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-name">Microplastic Free</div>
+                        <div class="feature-description">Because your dog deserves clean, safe nutrition—inside and out</div>
+                    </div>
+                </div>
+                
+                <!-- Right Features -->
+                <div class="feature-item right-feature" id="right1">
+                    <div class="feature-circle">
+<svg id="fi_2044963" enable-background="new 0 0 496 496" height="50" viewBox="0 0 496 496" width="50" xmlns="http://www.w3.org/2000/svg"><path d="m337.437 234.139c150.277-25.992 135.137-173.886 135.137-173.886-98.088-12.616-157.321 31.368-182.595 108.896l-12.599 39.98 28.649 22.749z" fill="#69da61"></path><path d="m472.574 60.253c-65.715-8.452-113.987 8.504-146.294 43.927 28.189-17.24 64.123-24.858 108.295-20.579 5.068.491 8.956 4.692 9.028 9.783.296 21.04-2.98 75.549-40.956 117.012 80.179-49.943 69.927-150.143 69.927-150.143z" fill="#5ab161"></path><path d="m154.322 0s-59.082 137.286 70.57 213.439c0 0 62.496 20.415 70.972 4.782 54.086-99.76-31.377-218.44-141.542-218.221z" fill="#a8ffa9"></path><path d="m195.429 24.719c31.093 3.514 59.59 16.411 82.688 35.328-29.091-35.864-73.91-60.146-123.795-60.047 0 0-50.369 117.052 43.984 194.945-45.809-56.627-34.554-124.117-25.906-154.689 2.86-10.112 12.587-16.717 23.029-15.537z" fill="#85eda2"></path><circle cx="121.566" cy="368.67" fill="#ff5872" r="98.566"></circle><path d="m121.566 270.104c-8.788 0-17.305 1.156-25.414 3.314 9.104 28.839 28.762 52.991 54.453 67.91 5.383 3.126 7.748 9.589 5.63 15.442-11.726 32.408-9.048 69.363 8.846 100.357 32.433-15.985 54.805-49.276 55.049-87.821.345-54.416-44.147-99.202-98.564-99.202z" fill="#db4968"></path><circle cx="339.399" cy="298.868" fill="#ff5872" r="98.566"></circle><path d="m325.227 295.874c-5.308-2.961-7.653-9.42-5.388-15.06 10.148-25.272 11.082-53.422 2.946-79.111-47.967 8.143-84.139 50.934-81.849 101.726 2.352 52.175 45.758 93.756 97.985 94.003 16.389.078 31.855-3.846 45.477-10.849-3.618-39.059-26.552-72.514-59.171-90.709z" fill="#db4968"></path><path d="m409.096 306.868c-4.418 0-8-3.582-8-8 0-29.184-20.715-54.604-49.254-60.443-4.329-.886-7.12-5.113-6.234-9.441.886-4.33 5.121-7.114 9.441-6.234 35.952 7.357 62.047 39.37 62.047 76.119 0 4.417-3.582 7.999-8 7.999z" fill="#ad4968"></path><circle cx="210.964" cy="237.147" fill="#ff5872" r="98.566"></circle><path d="m125.365 255.908c0-54.437 44.13-98.566 98.566-98.566 29.539 0 56.039 12.998 74.104 33.581-16.565-31.139-49.339-52.343-87.07-52.343-54.437 0-98.566 44.13-98.566 98.566 0 24.898 9.236 47.635 24.462 64.985-7.335-13.786-11.496-29.517-11.496-46.223z" fill="#ff7f90"></path><g fill="#ad4968"><path d="m80.268 352.474c-4.418 0-8-3.582-8-8v-26.047c0-4.418 3.582-8 8-8s8 3.582 8 8v26.047c0 4.418-3.582 8-8 8z"></path><path d="m93.291 339.45h-26.046c-4.418 0-8-3.582-8-8s3.582-8 8-8h26.046c4.418 0 8 3.582 8 8s-3.582 8-8 8z"></path><path d="m183.156 222.733c-4.418 0-8-3.582-8-8v-26.047c0-4.418 3.582-8 8-8s8 3.582 8 8v26.047c0 4.418-3.582 8-8 8z"></path><path d="m196.18 209.71h-26.047c-4.418 0-8-3.582-8-8s3.582-8 8-8h26.047c4.418 0 8 3.582 8 8s-3.582 8-8 8z"></path></g><circle cx="268.699" cy="397.434" fill="#ff5872" r="98.566"></circle><path d="m180.076 412.022c0-51.691 41.904-93.595 93.595-93.595 49.263 0 89.637 38.06 93.321 86.38 4.252-57.453-41.175-105.939-98.292-105.939-54.437 0-98.566 44.13-98.566 98.566 0 25.302 9.538 48.374 25.209 65.826-9.65-14.72-15.267-32.322-15.267-51.238z" fill="#ff7f90"></path><path d="m305.482 382.683c-4.418 0-8-3.582-8-8v-26.046c0-4.418 3.582-8 8-8s8 3.582 8 8v26.046c0 4.418-3.582 8-8 8z" fill="#ad4968"></path><path d="m318.506 369.659h-26.046c-4.418 0-8-3.582-8-8s3.582-8 8-8h26.046c4.418 0 8 3.582 8 8s-3.582 8-8 8z" fill="#ad4968"></path></svg>                    </div>
+                    <div class="feature-content">
+                        <div class="feature-name">Cranberry Extract</div>
+                        <div class="feature-description">Helps maintain urinary tract health and supports normal pH levels</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item right-feature" id="right2">
+                    <div class="feature-circle">
+<svg id="fi_4593460" enable-background="new 0 0 464.132 464.132" height="50" viewBox="0 0 464.132 464.132" width="50" xmlns="http://www.w3.org/2000/svg"><path d="m422.636 151.522c-4.93-9.521-8.244-19.704-9.88-30.41-4.837-31.878-24.878-58.894-53.03-72.99-9.656-4.848-18.369-11.2-25.87-18.8-22.37-22.67-54.37-33.07-85.8-27.88-5.29.87-10.64 1.31-15.99 1.31-14.264 0-17.72-2.62-31.97-2.62-26.02 0-51.24 10.36-69.82 29.19-7.5 7.599-16.213 13.951-25.87 18.8-28.15 14.095-48.193 41.11-53.03 72.99-1.633 10.684-4.94 20.869-9.88 30.41-14.647 28.275-14.66 61.919 0 90.22 4.93 9.521 8.244 19.704 9.88 30.41 4.837 31.879 24.879 58.894 53.03 72.99 9.655 4.847 18.369 11.2 25.87 18.8 21.906 22.2 53.021 32.613 83.79 28.19v64c0 4.418 3.582 8 8 8h20c4.418 0 8-3.582 8-8v-64c30.75 4.421 61.871-5.976 83.79-28.19 7.499-7.598 16.213-13.952 25.87-18.8 28.151-14.095 48.193-41.11 53.03-72.99 1.633-10.684 4.94-20.869 9.88-30.41 14.647-28.275 14.66-61.919 0-90.22z" fill="#cbe3fa"></path><path d="m250.066 392.132v64c0 4.418-3.582 8-8 8h-20c-4.418 0-8-3.582-8-8v-64c16.885-2.52 23.715-1.833 36 0z" fill="#befa91"></path><g fill="#9ec7f0"><path d="m166.903 114.933c-2.474 0-4.912-1.143-6.478-3.296l-7.72-10.62c-2.599-3.574-1.807-8.577 1.767-11.175 3.573-2.6 8.577-1.807 11.175 1.767l7.72 10.62c3.876 5.331-.027 12.704-6.464 12.704z"></path><path d="m202.353 163.733c-2.475 0-4.915-1.144-6.479-3.299l-15.57-21.44c-2.597-3.575-1.804-8.578 1.771-11.174s8.579-1.803 11.174 1.772l15.57 21.44c3.867 5.323-.016 12.701-6.466 12.701z"></path><path d="m300.943 299.423c-2.474 0-4.913-1.143-6.479-3.297l-17.07-23.49c-2.598-3.574-1.806-8.578 1.769-11.175 3.575-2.598 8.578-1.805 11.175 1.769l17.07 23.49c3.875 5.332-.029 12.703-6.465 12.703z"></path><path d="m183.988 189.014c-1.806 0 4.057 1.73-72.335-23.093-4.201-1.365-6.501-5.878-5.136-10.081 1.365-4.202 5.873-6.503 10.081-5.136l69.86 22.7c4.201 1.365 6.501 5.878 5.136 10.081-1.098 3.38-4.234 5.529-7.606 5.529z"></path><path d="m369.428 249.464c-1.824 0 .719.652-41.399-13.128-4.199-1.374-6.49-5.892-5.116-10.091s5.896-6.487 10.091-5.116l38.91 12.73c4.199 1.374 6.49 5.892 5.116 10.091-1.104 3.373-4.236 5.514-7.602 5.514z"></path><path d="m298.698 226.324c-1.811 0-1.326-.016-21.04-6.468-4.199-1.374-6.489-5.892-5.115-10.091 1.374-4.2 5.897-6.486 10.092-5.116l18.55 6.07c4.199 1.374 6.489 5.892 5.115 10.091-1.104 3.373-4.237 5.514-7.602 5.514z"></path><path d="m298.649 112.973c-6.441 0-10.34-7.377-6.462-12.707l6.3-8.66c2.599-3.573 7.602-4.363 11.175-1.763 3.573 2.599 4.362 7.603 1.763 11.175l-6.3 8.66c-1.566 2.152-4.003 3.295-6.476 3.295z"></path><path d="m261.779 163.733c-6.449 0-10.331-7.378-6.467-12.701l17.021-23.44c2.596-3.575 7.601-4.37 11.174-1.772 3.575 2.596 4.369 7.599 1.773 11.174l-17.021 23.44c-1.565 2.154-4.005 3.299-6.48 3.299z"></path><path d="m163.059 300.133c-6.431 0-10.321-7.344-6.487-12.672l39.28-54.6c2.58-3.587 7.578-4.403 11.166-1.822 3.587 2.581 4.402 7.58 1.822 11.166l-39.28 54.6c-1.563 2.172-4.014 3.328-6.501 3.328z"></path><path d="m280.144 189.014c-3.372 0-6.508-2.149-7.606-5.53-1.365-4.202.935-8.715 5.137-10.081l41.58-13.51c4.204-1.365 8.715.934 10.08 5.136s-.935 8.715-5.137 10.081c-44.965 14.61-42.251 13.904-44.054 13.904z"></path><path d="m142.554 233.714c-3.372 0-6.508-2.149-7.606-5.53-1.365-4.202.935-8.715 5.137-10.08l41.43-13.46c4.203-1.365 8.716.935 10.08 5.137 1.365 4.202-.935 8.715-5.137 10.08-44.965 14.608-42.101 13.853-43.904 13.853z"></path><path d="m232.066 123.132c-4.418 0-8-3.582-8-8v-43c0-4.418 3.582-8 8-8s8 3.582 8 8v43c0 4.419-3.582 8-8 8z"></path><path d="m232.066 329.132c-4.418 0-8-3.582-8-8v-74c0-4.418 3.582-8 8-8s8 3.582 8 8v74c0 4.419-3.582 8-8 8z"></path></g><circle cx="231.566" cy="196.632" fill="#ffe773" r="50"></circle><path d="m240.054 147.35c11.822 2.023 13.83 18.401 2.726 22.932-18.033 7.359-31.213 25.04-31.213 46.35 0 12.8-15.622 16.963-21.975 7.173-23.343-35.969 7.126-83.87 50.462-76.455z" fill="#fff0a6"></path><path d="m294.316 4.732c13.551 4.582 11.45 24.378-2.739 26.195-5.717.732-17.782 3.429-35.501.516-30.761-5.079-62.962 4.735-85.8 27.88-7.5 7.599-16.213 13.951-25.87 18.8-28.15 14.095-48.193 41.11-53.03 72.99-1.633 10.684-4.94 20.869-9.88 30.41-14.647 28.275-14.66 61.919 0 90.22 5.233 10.106 8.232 19.93 9.96 30.927 2.237 14.236-16.26 21.811-24.438 9.946-7.208-10.458-13.097-23.69-15.642-40.462-1.633-10.684-4.94-20.869-9.88-30.41-14.647-28.275-14.66-61.919 0-90.22 4.93-9.521 8.244-19.704 9.88-30.41 4.837-31.878 24.878-58.894 53.03-72.99 9.656-4.848 18.369-11.2 25.87-18.8 18.58-18.83 43.8-29.19 69.82-29.19 14.235 0 17.72 2.62 31.97 2.62 5.35 0 10.7-.44 15.99-1.31 18.162-3.001 33.456-1.042 46.26 3.288z" fill="#eef7ff"></path><path d="m234.066 398.705v57.428c0 4.418-3.582 8-8 8h-4c-4.418 0-8-3.582-8-8v-64c4.309-.644 7.583-1.148 11.479-1.412 4.612-.313 8.521 3.361 8.521 7.984z" fill="#daffbf"></path></svg>                    </div>
+                    <div class="feature-content">
+                        <div class="feature-name">Dandelion Leaf</div>
+                        <div class="feature-description">Helps maintain urinary tract health and supports normal pH levels</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item right-feature" id="right3">
+                    <div class="feature-circle">
+<svg id="fi_10727473" enable-background="new 0 0 463.89 463.89" height="50" viewBox="0 0 463.89 463.89" width="50" xmlns="http://www.w3.org/2000/svg"><path d="m457.138 102.118c-19.421 66.191-74.053 144.379-119.25 196.25-61.215 79.517-165.043 83.15-209.148 40.584-44.851-43.286-43.993-149.838 36.778-212.955 50.286-43.808 121.995-93.805 184.64-115.53 89.385-30.997 131.122 9.012 106.98 91.651z" fill="#ffe773"></path><path d="m463.628 51.848c-67.813-53.303-383.73 116.02-340.28 281.32-39.25-46.37-35.21-146.7 42.17-207.17 50.29-43.81 121.98-93.84 184.64-115.53 53.73-18.658 108.42-15.712 113.47 41.38z" fill="#fff0a6"></path><path d="m459.428 33.278c-5.366-13.674-15.515-23.619-28.82-28.82-16.901 2.505-38.414 14.38-53.12 23.28-4.76-7.37-8.83-14.78-12-22.04-5.01 1.37-10.12 2.96-15.33 4.77 1.731 5.191 8.466 17.477 13.84 25.77-20.87 13.6-42.37 29.63-61.76 44.93-14.145-27.25-9.937-38.813-12.38-43.18-4.94 2.72-9.9 5.55-14.86 8.48.86 14.19 6.16 29.57 14.48 44.9-18.81 15.21-38.27 31.8-57.62 49.11-19.379-33.541-16.171-47.429-19.67-52.05-4.6 3.42-9.14 6.88-13.62 10.38 2.87 16.14 10.13 34.14 21.18 52.62-4.95 4.52-9.87 9.07-14.77 13.66-3.23 3.01-3.39 8.08-.37 11.3 3.02 3.23 8.08 3.39 11.31.38 25.56-23.94 53.72-48.69 81.89-71.57 15.43 23.36 37.02 45.67 59.64 62.39-15.26 18.74-31.85 38.1-49.14 57.3-17.81-13.26-35.32-29.74-50.83-48.23-2.84-3.39-7.89-3.83-11.27-.99-3.39 2.84-3.83 7.89-.99 11.27 15.9 18.95 33.88 35.93 52.32 49.79-3.45 3.76-6.92 7.51-10.42 11.24-4.77 5.1-1.12 13.47 5.84 13.47 2.14 0 4.27-.85 5.84-2.53 3.99-4.26 7.96-8.55 11.9-12.85 17.11 11.36 34.28 19.84 50.25 24.54 3.43-4.33 6.83-8.72 10.2-13.16-3.48-2.706-18.964-3.436-49.61-23.34 17.3-19.25 33.89-38.65 49.16-57.44 4.89 3.09 9.78 5.87 14.63 8.32 3.92 1.97 8.74.42 10.74-3.55 1.99-3.94.41-8.75-3.54-10.74-3.87-1.95-7.8-4.16-11.74-6.6 15.65-19.75 31.95-41.52 45.69-62.4 11.35 8.25 23.41 15.019 25.63 15.76 1.88-5.2 3.56-10.32 5.03-15.33-7.4-3.91-14.81-8.62-22.09-13.92 9.179-14.992 21.792-37.452 24.38-54.92zm-91.93 121.83c-21.64-15.92-42.47-37.44-57.11-60 19.58-15.49 41.79-32.11 62.8-45.77 11.56 15.29 25.59 29.95 40.62 42.48-13.88 21.23-30.6 43.5-46.31 63.29zm54.88-76.89c-13.15-11.13-25.41-23.98-35.64-37.36 36.31-21.8 52.05-23.06 55.7-19.41 3.68 3.69 2.35 19.71-20.06 56.77z" fill="#facf5f"></path><path d="m84.428 424.188c-17.18 24.54-35.27 51.23-52.05 34.45l-27.13-27.13c-16.78-16.78 9.92-34.89 34.44-52.05 35.843-36.122 71.926 10.741 44.74 44.73z" fill="#9ceb63"></path><path d="m352.918 331.878c-75.157 106.311-200.082 164.587-292.79 71.88-92.745-92.743-34.397-217.65 71.89-292.8 10.63-7.51 25.55-3.56 30.74 8.38 26.669 61.667 20.687 127.945-7.28 189.07 61.732-27.928 127.24-33.942 188.96-7.33 11.99 5.21 16.02 20.13 8.48 30.8z" fill="#befa91"></path><path d="m356.518 322.958c-45.584-15.44-92.851-13.907-138.837.4-22.627 7.039-30.513-28.209-8.558-33.257 45.196-10.391 91.222-8.032 135.315 10.977 8.88 3.86 13.39 13.04 12.08 21.88z" fill="#daffbf"></path><path d="m74.848 417.008c-4.99-4.01-9.9-8.43-14.72-13.25-92.74-92.74-34.4-217.65 71.89-292.8 10.63-7.51 25.55-3.56 30.74 8.38 10.28 23.733-205.71 151.519-87.91 297.67z" fill="#daffbf"></path><g fill="#9ceb63"><path d="m128.88 384.597c-2.562-3.601-1.72-8.595 1.88-11.157 42.618-30.326 92.905-46.756 145.423-47.511 4.255-.106 8.049 3.352 8.114 7.884.063 4.418-3.466 8.051-7.884 8.114-49.258.709-96.416 16.113-136.377 44.55-3.586 2.552-8.583 1.734-11.156-1.88z"></path><path d="m164.148 287.338c-2.57 7.04-5.45 14.03-8.61 20.93-21.56 9.85-42.24 22.45-61.59 36.94-8.46 6.34-18.02-6.5-9.61-12.79 24.48-18.33 51.41-33.86 79.81-45.08z"></path><path d="m108.063 294.44c-5.737 0-9.692-5.954-7.29-11.287 13.573-30.139 20.701-62.33 21.186-95.681.063-4.378 3.633-7.884 7.997-7.884 4.46 0 8.067 3.646 8.001 8.116-.517 35.551-8.119 69.874-22.595 102.019-1.334 2.962-4.248 4.717-7.299 4.717z"></path></g></svg>                    </div>
+                    <div class="feature-content">
+                        <div class="feature-name">Corn Silk</div>
+                        <div class="feature-description">Traditional herb that helps maintain healthy urinary flow</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item right-feature" id="right4">
+                    <div class="feature-circle">
+<svg id="fi_3652042" enable-background="new 0 0 463.996 463.996" height="50" viewBox="0 0 463.996 463.996" width="50" xmlns="http://www.w3.org/2000/svg"><g fill="#befa91"><path d="m199.696 55.26c56.1 56.1 56.38 120.44 54.94 163.96-.63 19.25-16.1 34.71-35.35 35.34-43.62 1.43-107.8 1.3-163.99-54.9-56.1-56.09-56.38-120.44-54.94-163.96.63-19.25 16.1-34.71 35.35-35.34 43.62-1.43 107.8-1.3 163.99 54.9z"></path><path d="m408.736 264.3c56.2 56.19 56.33 120.37 54.9 163.99-.63 19.25-16.09 34.72-35.34 35.35-43.52 1.44-107.87 1.16-163.96-54.94-56.2-56.19-56.33-120.37-54.9-163.99.63-19.25 16.09-34.72 35.34-35.35 43.52-1.44 107.86-1.16 163.96 54.94z"></path><path d="m244.646 242.56c1.12 31.73 2.05 80.11-39.98 122.14-42.1 42.1-90.34 41.06-122.16 39.95-12.59-.44-22.7-10.54-23.14-23.13-1.12-31.74-2.05-80.11 39.98-122.14 42.1-42.1 90.34-41.06 122.16-39.95 12.59.44 22.7 10.54 23.14 23.13z"></path></g><path d="m143.346 272.38c-36.654 36.654-42.787 87.391-40.78 114.803.711 9.712-7.199 17.886-16.932 17.573-1.059-.034-2.103-.07-3.128-.106-12.59-.44-22.7-10.54-23.14-23.13-1.12-31.74-2.05-80.11 39.98-122.14 14.617-14.617 29.973-24.031 45.127-30.051 7.567-3.006 16.193-.005 20.284 7.034 4.261 7.333 2.208 16.645-4.647 21.639-5.657 4.121-11.262 8.882-16.764 14.378z" fill="#daffbf"></path><path d="m95.848 174.915c16.463 22.429-13.68 49.417-34.283 30.718-2.117-1.922-4.208-3.912-6.269-5.973-56.1-56.09-56.38-120.44-54.94-163.96.63-19.25 16.1-34.71 35.35-35.34 16.483-.536 27.396 14.552 23.449 29.135-9.75 36.018.858 96.598 36.693 145.42z" fill="#daffbf"></path><path d="m384.913 373.603-39.697-39.697c8.447-5.277 17.538-7.881 26.565-8.191 4.415-.152 7.872-3.855 7.72-8.271-.151-4.416-3.847-7.866-8.271-7.72-13.757.474-26.612 5.009-37.556 12.64l-35.774-35.774c10.662-7.742 23.257-12.499 36.756-13.618 4.403-.365 7.678-4.23 7.313-8.633s-4.244-7.678-8.633-7.312c-16.834 1.395-33.044 7.489-46.861 18.138l-97.645-97.645c10.668-13.842 16.745-30.055 18.138-46.86.365-4.403-2.908-8.269-7.312-8.634-4.411-.365-8.269 2.909-8.634 7.312-1.084 13.077-5.626 25.75-13.618 36.756l-35.775-35.775c7.643-10.96 12.169-23.817 12.641-37.555.152-4.416-3.304-8.119-7.72-8.271-4.382-.147-8.119 3.303-8.271 7.72-.325 9.394-3.106 18.426-8.191 26.565l-39.694-39.695c-3.123-3.124-8.188-3.125-11.314 0-3.124 3.124-3.124 8.19 0 11.314l19.697 19.697c-8.447 5.277-17.538 7.881-26.565 8.191-4.415.152-7.872 3.855-7.72 8.271.148 4.322 3.699 7.725 7.99 7.725 2.502 0 7.545-.471 12.168-1.453 9.129-1.928 17.879-5.761 25.668-11.192l35.774 35.774c-10.641 7.726-23.231 12.497-36.756 13.618-4.403.365-7.678 4.23-7.313 8.633.364 4.389 4.215 7.677 8.633 7.312 16.836-1.395 33.045-7.49 46.861-18.138l63.165 63.165-47.087 47.087c-10.864-5.222-23.205-6.776-35.448-3.871-4.299 1.021-6.956 5.333-5.935 9.632s5.326 6.956 9.632 5.936c6.28-1.491 12.865-1.386 19.431.623l-30.937 30.937c-5.056 5.056-1.405 13.657 5.657 13.657 2.048 0 4.095-.781 5.657-2.343l50.936-50.936c2.014 6.583 2.111 13.161.623 19.432-1.191 5.022 2.621 9.849 7.791 9.849 3.622 0 6.904-2.477 7.777-6.155 2.908-12.251 1.346-24.592-3.871-35.446l27.087-27.087 63.166 63.165c-10.668 13.842-16.745 30.055-18.138 46.86-.365 4.403 2.908 8.269 7.312 8.634 4.448.366 8.272-2.95 8.634-7.312 1.084-13.077 5.626-25.75 13.618-36.756l35.775 35.775c-7.643 10.96-12.169 23.817-12.641 37.555-.152 4.416 3.304 8.119 7.72 8.271 4.424.15 8.119-3.31 8.271-7.72.325-9.394 3.106-18.426 8.191-26.565l19.697 19.697c1.563 1.563 3.609 2.343 5.657 2.343 7.064-.002 10.71-8.605 5.656-13.659z" fill="#9ceb63"></path><path d="m221.758 350.375c-.546-1.336-1.073-2.671-1.581-4.005 22.043-31.178 26.519-65.717 24.51-103.85-.44-12.59-10.56-22.461-23.14-23.13-36.791-1.956-70.498 2.024-101.21 22.64-1.285-.482-2.571-.982-3.858-1.499-6.093-2.451-6.746-10.771-1.173-14.247 40.402-25.198 82.221-23.738 106.801-22.883 21.057.729 37.862 17.86 38.57 38.56.897 25.176 2.416 68.46-24.842 109.813-3.531 5.354-11.651 4.538-14.077-1.399z" fill="#9ceb63"></path><path d="m364.646 204.62c-42.1 42.1-90.34 41.06-122.16 39.95-12.594-.448-22.697-10.545-23.14-23.13-1.12-31.73-2.05-80.11 39.98-122.14 42.1-42.1 90.34-41.06 122.16-39.95 12.59.44 22.7 10.54 23.14 23.13 1.12 31.74 2.05 80.11-39.98 122.14z" fill="#befa91"></path><path d="m347.597 223.41c6.046 2.432 6.793 10.735 1.27 14.193-32.508 20.355-66.357 24.319-103.882 23.056-18.343-.523-31.124-9.012-37.72-22.77-3.265-6.762-3.805-12.029-4.01-18.8-.834-24.886-1.266-65.069 23.067-103.977 3.472-5.552 11.779-4.876 14.229 1.197.522 1.295 1.027 2.588 1.514 3.88-20.533 30.571-24.664 64.345-22.72 101.25.395 11.241 8.266 22.538 25.38 23.21 26.52.88 63.59 1.05 99.01-22.74 1.287.483 2.574.983 3.862 1.501z" fill="#9ceb63"></path><path d="m274.253 224.838c3.011 9.983-4.421 20.062-14.848 20.084-6.017.013-11.69-.168-16.919-.352-12.594-.448-22.697-10.545-23.14-23.13-1.12-31.73-2.05-80.11 39.98-122.14 11.444-11.444 24.253-19.851 37.266-25.961 15.841-7.437 29.938 12.933 17.478 25.221-33.324 32.869-49.286 94.88-39.817 126.278z" fill="#daffbf"></path><path d="m333.656 141.66-30.94 30.93c6.609 2.023 13.156 2.11 19.43.63 4.31-1.02 8.61 1.63 9.63 5.93s-1.63 8.61-5.93 9.63c-11.775 2.813-24.227 1.542-35.45-3.87-10.428 10.435-46.928 46.935-57.35 57.36-4.96-2.35-8.98-6.34-11.35-11.29l37.39-37.38c-5.325-11.041-6.727-23.422-3.87-35.45 1.02-4.3 5.33-6.96 9.63-5.93 4.3 1.02 6.95 5.33 5.93 9.63-1.487 6.305-1.383 12.854.63 19.43 97.255-97.255 19.417-19.477 50.93-50.94 3.127-3.123 8.19-3.12 11.32 0 3.12 3.13 3.12 8.19 0 11.32z" fill="#9ceb63"></path></svg>                    </div>
+                    <div class="feature-content">
+                        <div class="feature-name">Nettle Leaf</div>
+                        <div class="feature-description">Rich in nutrients that support overall urinary tract health</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item right-feature" id="right5">
+                    <div class="feature-circle">
+<svg id="fi_10752325" enable-background="new 0 0 480 480" height="50" viewBox="0 0 480 480" width="50" xmlns="http://www.w3.org/2000/svg"><path d="m283.67 341.01v63.67l-55.13 31.83-55.13-31.83v-63.67l55.13-31.83z" fill="#dbeeff"></path><path d="m173.41 341.01v63.67l-55.14 31.83-55.13-31.83v-63.67l55.13-31.83z" fill="#fff0a6"></path><path d="m118.27 245.5v63.66l-55.13 31.83-55.14-31.83v-63.66l55.14-31.84z" fill="#dbeeff"></path><path d="m319.409 416.071-27.739-16.01v-59.051c0-2.858-1.525-5.499-4-6.928l-55.13-31.83c-2.476-1.429-5.524-1.429-8 0l-51.13 29.52-47.139-27.211v-54.443l28.641-16.541c3.826-2.209 5.136-7.103 2.927-10.929-2.209-3.825-7.104-5.135-10.929-2.927l-28.639 16.539-47.13-27.22v-22.62c0-4.418-3.582-8-8-8s-8 3.582-8 8v22.622l-51.141 29.53c-2.475 1.429-4 4.07-4 6.928v63.66c0 2.858 1.525 5.5 4 6.929l51.139 29.52v59.071c0 2.858 1.525 5.499 4 6.928l51.13 29.52v26.872c0 4.418 3.582 8 8 8s8-3.582 8-8v-26.871l47.139-27.211 51.13 29.52c2.481 1.432 5.53 1.426 8 0l51.131-29.521 27.74 16.011c3.81 2.199 8.709.914 10.928-2.93 2.21-3.826.898-8.718-2.928-10.927zm-303.409-165.952 47.139-27.22 47.131 27.22v54.423l-47.131 27.211-47.139-27.212zm55.14 95.509 47.131-27.211 47.139 27.212v54.432l-47.139 27.212-47.131-27.211zm204.53 54.434-47.13 27.21-47.13-27.21v-54.433l47.13-27.21 47.13 27.21z" fill="#9ec7f0"></path><g fill="#cbe3fa"><path d="m472 398.91h-117.42c-1.604 0-3.172-.482-4.499-1.385l-17.38-11.82c-3.653-2.485-4.601-7.461-2.116-11.114s7.461-4.6 11.114-2.116l15.343 10.436h114.958c4.418 0 8 3.582 8 8s-3.582 7.999-8 7.999z"></path><path d="m472 355.91h-51.84c-4.418 0-8-3.582-8-8s3.582-8 8-8h51.84c4.418 0 8 3.582 8 8s-3.582 8-8 8z"></path><path d="m388.04 355.91h-19.46c-4.418 0-8-3.582-8-8s3.582-8 8-8h19.46c4.418 0 8 3.582 8 8s-3.582 8-8 8z"></path><path d="m443.33 315.91h-74.75c-4.418 0-8-3.582-8-8s3.582-8 8-8h74.75c4.418 0 8 3.582 8 8s-3.582 8-8 8z"></path><path d="m108.87 139.06h-100.87c-4.418 0-8-3.582-8-8s3.582-8 8-8h100.87c4.418 0 8 3.582 8 8s-3.582 8-8 8z"></path><path d="m145.26 89.06h-76.64c-4.418 0-8-3.582-8-8s3.582-8 8-8h76.64c4.418 0 8 3.582 8 8s-3.582 8-8 8z"></path><path d="m23.33 89.06h-15.33c-4.418 0-8-3.582-8-8s3.582-8 8-8h15.33c4.418 0 8 3.582 8 8s-3.582 8-8 8z"></path><path d="m145.26 39.06h-137.26c-4.418 0-8-3.582-8-8s3.582-8 8-8h137.26c4.418 0 8 3.582 8 8s-3.582 8-8 8z"></path></g><circle cx="339.427" cy="136.66" fill="#fff0a6" r="132.66"></circle><path d="m246.767 156.66c0 43.93 21.35 82.87 54.24 107.01-54.53-16.47-94.24-67.1-94.24-127.01 0-73.27 59.39-132.66 132.66-132.66 29.33 0 56.45 9.52 78.41 25.65-84.748-25.647-171.07 37.774-171.07 127.01z" fill="#fff8d6"></path><path d="m331.427 220.74v-27.86c0-10.585 16-10.585 16 0v27.86c0 10.584-16 10.584-16 0z" fill="#9ceb63"></path><path d="m418.927 152.33c7.59.21 11.24 9.3 5.92 14.71-12.98 13.17-31.01 22.51-49.63 26.22 3.36 1.1 6.63 2.48 9.73 4.12 8.32 4.4 4.7 17.01-4.67 16.25-15.418-1.252-31.43-8.638-40.85-20.75-9.23 11.89-25.09 19.47-40.85 20.75-9.37.76-12.99-11.85-4.67-16.25 3.1-1.64 6.37-3.02 9.74-4.12-18.63-3.71-36.66-13.05-49.63-26.22-5.33-5.41-1.68-14.5 5.91-14.71 12.53-.35 25.52 2.19 37.57 7.04-15.42-19.65-25.46-44.16-26.93-68.14-.43-7.01 7.22-11.67 13.15-7.91 12.72 8.08 23.99 19.2 33.04 32.04.26-21.75 5.31-43.42 15.12-61.74 3.21-5.99 11.89-5.99 15.1 0 9.82 18.32 14.86 39.99 15.13 61.74 9.04-12.84 20.31-23.96 33.03-32.04 5.93-3.76 13.58.9 13.15 7.91-1.47 23.98-11.51 48.49-26.93 68.14 12.05-4.85 25.04-7.39 37.57-7.04z" fill="#befa91"></path></svg>                    </div>
+                    <div class="feature-content">
+                        <div class="feature-name">D-Mannose</div>
+                        <div class="feature-description">Natural sugar that helps maintain a healthy urinary tract environment</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section with CTA -->
+    <div class="footer-section">
+        <div class="product-name">Urinary Care+ for Dogs</div>
+        <div class="product-tagline">Advanced formula to support healthy urinary tract function in dogs of all breeds and ages</div>
+        <a class="fusion-button button-flat fusion-button-default-size button-custom fusion-button-default button-2 fusion-button-default-span fusion-button-default-type" style="--button_accent_color:var(--awb-color1);--button_accent_hover_color: #2d355c;--button_border_hover_color:var(--awb-color3);--button_gradient_top_color:var(--awb-color5);--button_gradient_bottom_color:var(--awb-color5);--button_gradient_top_color_hover:var(--awb-color1);--button_gradient_bottom_color_hover:var(--awb-color1);" target="_blank" rel="noopener noreferrer" href="https://nutrawag.ca/product/urinary-care-for-dogs/"><span class="fusion-button-text">BUY NOW</span></a>
+    </div>
+    
+    <!-- Feature Modal -->
+    <div class="feature-modal" id="feature-modal">
+        <div class="modal-content">
+            <div class="modal-close" id="modal-close">✕</div>
+            <div class="modal-header">
+                <div class="modal-icon" id="modal-icon"></div>
+                <h3 class="modal-title" id="modal-title">Feature Title</h3>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <p>Feature description will appear here.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate features on load
+            const features = document.querySelectorAll('.feature-item');
+            
+            features.forEach(feature => {
+                setTimeout(() => {
+                    feature.style.opacity = '1';
+                    feature.style.transform = 'translateY(0)';
+                }, parseInt(feature.style.animationDelay || 0) * 1000);
+            });
+            
+            // Connecting lines removed
+            
+            // Modal functionality
+            const modal = document.getElementById('feature-modal');
+            const modalClose = document.getElementById('modal-close');
+            const modalTitle = document.getElementById('modal-title');
+            const modalBody = document.getElementById('modal-body');
+            const modalIcon = document.getElementById('modal-icon');
+            
+            features.forEach(feature => {
+                feature.addEventListener('click', () => {
+                    const featureName = feature.querySelector('.feature-name').textContent;
+                    const featureDesc = feature.querySelector('.feature-description').textContent;
+                    const featureCircle = feature.querySelector('.feature-circle').innerHTML;
+                    
+                    modalTitle.textContent = featureName;
+                    modalBody.innerHTML = `
+                        <p>${featureDesc}</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed in eros eget justo tristique varius. Praesent vehicula, velit eget venenatis laoreet, nunc arcu finibus justo, eget interdum nisi purus vel nisi.</p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    `;
+                    modalIcon.innerHTML = featureCircle;
+                    
+                    modal.classList.add('active');
+                });
+            });
+            
+            modalClose.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+    </script>
+    </body>
+</html>
