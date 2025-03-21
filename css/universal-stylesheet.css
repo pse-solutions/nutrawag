@@ -1,6 +1,29 @@
 /* Universal Stylesheet for NutraWag */
 
 /* ===================
+   Font Imports
+=================== */
+@font-face {
+    font-family: 'Lemonde-courrier';
+    src: url('fonts/LemondeCourrierStd-Bold.woff2') format('woff2'),
+         url('fonts/LemondeCourrierStd-Bold.woff') format('woff'),
+         url('fonts/LemondeCourrierStd-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lemonde-courrier';
+    src: url('fonts/LemondeCourrierStd-Regular.woff2') format('woff2'),
+         url('fonts/LemondeCourrierStd-Regular.woff') format('woff'),
+         url('fonts/LemondeCourrierStd-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ===================
    Variables
 =================== */
 :root {
@@ -55,7 +78,8 @@
 }
 
 body {
-    font-family: 'Futura', 'Trebuchet MS', sans-serif;
+    font-family: 'Tahoma', Geneva, sans-serif;
+    font-weight: 400;
     line-height: 1.6;
     color: var(--dark-text);
     background-color: var(--cream);
@@ -71,7 +95,7 @@ body {
    Typography
 =================== */
 h1, h2, h3, h4, h5 {
-    font-family: 'Le Monde Courrier Std 2', 'Courier New', monospace;
+    font-family: 'Lemonde-courrier', 'Le Monde Courrier Std 2', 'Courier New', monospace;
     font-weight: 700;
     margin-bottom: var(--space-md);
     color: var(--navy);
@@ -226,8 +250,8 @@ small {
 
 .product-badge {
     display: inline-block;
-    background-color: var(--mint);
-    color: var(--navy);
+    background-color: #4cb04f;
+    color: white;
     font-size: 0.8rem;
     font-weight: 600;
     padding: 4px 12px;
@@ -236,6 +260,7 @@ small {
 }
 
 .product-title {
+    font-family: 'Lemonde-courrier', 'Le Monde Courrier Std 2', 'Courier New', monospace;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 10px;
@@ -243,10 +268,10 @@ small {
 }
 
 .product-price {
-    font-family: 'Le Monde Courrier Std 2', 'Courier New', monospace;
+    font-family: 'Tahoma', Geneva, sans-serif;
     font-size: 2rem;
     font-weight: 600;
-    color: var(--navy);
+    color: #2f7d31;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -260,10 +285,12 @@ small {
 }
 
 .benefits-title {
-    font-weight: 600;
+    font-family: 'Lemonde-courrier', 'Le Monde Courrier Std 2', 'Courier New', monospace;
+    font-weight: 700;
     margin-top: 15px;
     margin-bottom: 10px;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    color: var(--navy);
 }
 
 .benefits-list {
@@ -277,7 +304,9 @@ small {
     list-style: none;
     position: relative;
     padding-left: 25px;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    font-family: 'Tahoma', Geneva, sans-serif;
+    margin-bottom: 8px;
 }
 
 .benefits-list li:before {
@@ -286,7 +315,7 @@ small {
     font-weight: 900;
     position: absolute;
     left: 0;
-    color: var(--navy);
+    color: #4cb04f;
 }
 
 .quantity-selector {
@@ -336,7 +365,6 @@ small {
     border: none;
     font-size: 1rem;
     font-weight: 600;
-    -moz-appearance: textfield;
 }
 
 .quantity-input::-webkit-outer-spin-button,
@@ -348,11 +376,11 @@ small {
 .add-to-cart {
     width: 100%;
     padding: 15px;
-    background: var(--navy);
+    background: #4cb04f;
     color: var(--light-text);
     border: none;
     border-radius: var(--radius-md);
-    font-family: 'Futura', 'Trebuchet MS', sans-serif;
+    font-family: 'Tahoma', Geneva, sans-serif;
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -366,7 +394,7 @@ small {
 }
 
 .add-to-cart:hover {
-    background: #3a4275; /* Slightly lighter navy */
+    background: #3d9040; /* Slightly darker green */
 }
 
 .add-to-cart i {
