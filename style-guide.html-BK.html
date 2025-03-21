@@ -4,11 +4,570 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Natural Dog Supplement Company - Style Guide</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="universal-styles.css" rel="stylesheet">
+    <style>
+        /* This is for the style guide only, to be embedded in WordPress */
+        .dog-style-guide {
+            font-family: 'Futura', 'Trebuchet MS', sans-serif;
+            line-height: 1.5;
+            color: #2b2d42;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        
+        .dog-style-guide * {
+            box-sizing: border-box;
+        }
+        
+        /* Style Guide Variables */
+        .dog-style-guide {
+            /* Primary Colors */
+            --navy: #2e355c;
+            --gray: #8c8a91;
+            
+            /* Secondary Colors */
+            --cream: #f7f6f2;
+            --pale-blue: #e6e9f0;
+            --beige: #e8e0d5;
+            
+            /* Accent Colors */
+            --mint: #c2d8cd;
+            --terracotta: #d9a282;
+            --lavender: #d8d6e5;
+            --accent-mint: #c2d8cd;
+            
+            /* Text Colors */
+            --dark-text: #2b2d42;
+            --medium-text: #585763;
+            --light-text: #ffffff;
+            
+            /* Functional Colors */
+            --success: #7cb797;
+            --error: #e07a5f;
+            --info: #81a4cd;
+            --sale: #d9794e;
+            
+            /* Spacing */
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-xxl: 48px;
+            --space-xxxl: 64px;
+            
+            /* Border Radius */
+            --radius-pill: 999px;
+        }
+        
+        /* Import Font Awesome for icons */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+        /* Typography */
+        .dog-style-guide h1, 
+        .dog-style-guide h2, 
+        .dog-style-guide h3, 
+        .dog-style-guide h4, 
+        .dog-style-guide h5 {
+            font-family: 'Le Monde Courrier Std 2', 'Courier New', monospace;
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            color: var(--navy);
+        }
+
+        .dog-style-guide h1 {
+            font-size: 42px;
+            line-height: 48px;
+            letter-spacing: -0.5px;
+            margin-bottom: var(--space-xl);
+        }
+
+        .dog-style-guide h2 {
+            font-size: 32px;
+            line-height: 40px;
+            letter-spacing: -0.3px;
+            margin-top: var(--space-xxl);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-xs);
+            position: relative;
+        }
+        
+        .dog-style-guide h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60px;
+            height: 4px;
+            background: var(--sale);
+            border-radius: var(--radius-pill);
+        }
+
+        .dog-style-guide h3 {
+            font-size: 24px;
+            line-height: 32px;
+            letter-spacing: -0.2px;
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .dog-style-guide h4 {
+            font-size: 20px;
+            line-height: 28px;
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-md);
+        }
+
+        .dog-style-guide h5 {
+            font-size: 18px;
+            line-height: 24px;
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-sm);
+        }
+
+        .dog-style-guide p {
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.2px;
+            margin-bottom: var(--space-md);
+        }
+
+        .dog-style-guide small {
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .dog-style-guide .section {
+            margin-bottom: var(--space-xxl);
+            padding: var(--space-lg);
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(46, 53, 92, 0.08);
+        }
+
+        /* Color Swatches */
+        .dog-style-guide .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .dog-style-guide .color-category {
+            margin-bottom: var(--space-xl);
+        }
+
+        .dog-style-guide .color-swatch {
+            height: 100px;
+            border-radius: 8px;
+            margin-bottom: var(--space-xs);
+            display: flex;
+            align-items: flex-end;
+            padding: var(--space-sm);
+            color: var(--light-text);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .dog-style-guide .color-swatch:hover {
+            transform: translateY(-4px);
+        }
+
+        .dog-style-guide .color-info {
+            background-color: rgba(255,255,255,0.9);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 4px;
+            color: var(--dark-text);
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .dog-style-guide .color-name {
+            font-weight: 500;
+        }
+
+        .dog-style-guide .color-hex {
+            font-family: monospace;
+        }
+
+        /* Typography Examples */
+        .dog-style-guide .typography-example {
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--pale-blue);
+        }
+
+        .dog-style-guide .font-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-md);
+        }
+
+        .dog-style-guide .font-name {
+            font-weight: 500;
+            margin-right: var(--space-lg);
+            min-width: 120px;
+        }
+
+        .dog-style-guide .font-usage {
+            color: var(--medium-text);
+            font-size: 14px;
+        }
+
+        .dog-style-guide .heading-examples, 
+        .dog-style-guide .body-examples, 
+        .dog-style-guide .special-examples {
+            background-color: var(--pale-blue);
+            padding: var(--space-lg);
+            border-radius: 8px;
+            margin-top: var(--space-md);
+        }
+
+        .dog-style-guide .body-examples p {
+            margin-bottom: var(--space-md);
+        }
+
+        .dog-style-guide .special-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .dog-style-guide .special-text-example {
+            background-color: white;
+            padding: var(--space-md);
+            border-radius: 4px;
+        }
+
+        /* UI Elements */
+        .dog-style-guide .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .dog-style-guide .button-primary, 
+        .dog-style-guide .button-secondary, 
+        .dog-style-guide .button-tertiary, 
+        .dog-style-guide .button-outline, 
+        .dog-style-guide .button-shadow {
+            text-decoration: none;
+        }
+
+        .dog-style-guide .button-primary {
+            background-color: var(--navy);
+            color: var(--light-text);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-family: 'Futura', 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .dog-style-guide .button-primary:hover {
+            background-color: #3a4275;
+        }
+
+        .dog-style-guide .button-primary:active {
+            background-color: #252c4e;
+        }
+
+        .dog-style-guide .button-secondary {
+            background-color: transparent;
+            color: var(--navy);
+            border: 2px solid var(--navy);
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-family: 'Futura', 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .dog-style-guide .button-secondary:hover {
+            background-color: rgba(46, 53, 92, 0.1);
+            box-shadow: 0 3px 8px rgba(46, 53, 92, 0.15);
+        }
+
+        .dog-style-guide .button-tertiary {
+            background-color: transparent;
+            color: var(--navy);
+            border: none;
+            padding: 10px 20px;
+            font-family: 'Futura', 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(46, 53, 92, 0.2);
+            border-radius: 4px;
+        }
+
+        .dog-style-guide .button-tertiary:hover {
+            box-shadow: 0 4px 8px rgba(46, 53, 92, 0.3);
+            transform: translateY(-1px);
+        }
+        
+        .dog-style-guide .button-outline {
+            background-color: white;
+            color: var(--navy);
+            border: 1px solid var(--navy);
+            padding: 11px 24px;
+            border-radius: 4px;
+            font-family: 'Futura', 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-block;
+            box-shadow: 0 2px 6px rgba(46, 53, 92, 0.1);
+        }
+
+        .dog-style-guide .button-outline:hover {
+            background-color: var(--pale-blue);
+            box-shadow: 0 4px 8px rgba(46, 53, 92, 0.2);
+        }
+        
+        .dog-style-guide .button-shadow {
+            background-color: white;
+            color: var(--navy);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-family: 'Futura', 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(46, 53, 92, 0.25);
+        }
+
+        .dog-style-guide .button-shadow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(46, 53, 92, 0.35);
+        }
+
+        .dog-style-guide .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .dog-style-guide .button-label {
+            margin-top: var(--space-sm);
+            font-size: 14px;
+            color: var(--medium-text);
+        }
+
+        /* Icons */
+        .dog-style-guide .icon-sizes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xl);
+            margin-top: var(--space-lg);
+            justify-content: center;
+        }
+        
+        .dog-style-guide .icon-size-example {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .dog-style-guide .icon-xs {
+            font-size: 16px;
+        }
+        
+        .dog-style-guide .icon-sm {
+            font-size: 20px;
+        }
+        
+        .dog-style-guide .icon-md {
+            font-size: 24px;
+        }
+        
+        .dog-style-guide .icon-lg {
+            font-size: 32px;
+        }
+        
+        .dog-style-guide .icon-xl {
+            font-size: 48px;
+        }
+        
+        .dog-style-guide .icon-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--navy);
+            transition: all 0.3s ease;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .dog-style-guide .icon-circle:hover {
+            background-color: var(--mint);
+            transform: scale(1.1);
+            color: var(--navy);
+        }
+        
+        .dog-style-guide .circle-xs {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .dog-style-guide .circle-sm {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .dog-style-guide .circle-md {
+            width: 48px;
+            height: 48px;
+        }
+        
+        .dog-style-guide .circle-lg {
+            width: 64px;
+            height: 64px;
+        }
+        
+        .dog-style-guide .circle-xl {
+            width: 84px;
+            height: 84px;
+        }
+        
+        .dog-style-guide .icon-animations {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+        
+        .dog-style-guide .animation-example {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: var(--space-md);
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(46, 53, 92, 0.05);
+        }
+        
+        .dog-style-guide .icon-anim {
+            font-size: 28px;
+            color: var(--navy);
+            margin-bottom: var(--space-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .dog-style-guide .grow:hover {
+            transform: scale(1.3);
+        }
+        
+        .dog-style-guide .rotate:hover {
+            transform: rotate(15deg);
+        }
+        
+        .dog-style-guide .pulse {
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        
+        .dog-style-guide .pulse:hover {
+            animation-name: pulse-animation;
+        }
+        
+        @keyframes pulse-animation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .dog-style-guide .color-shift:hover {
+            color: var(--terracotta);
+        }
+        
+        .dog-style-guide .bounce:hover {
+            animation-name: bounce-animation;
+            animation-duration: 0.8s;
+            animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+        }
+        
+        @keyframes bounce-animation {
+            0% { transform: translateY(0); }
+            20% { transform: translateY(-8px); }
+            40% { transform: translateY(0); }
+            60% { transform: translateY(-5px); }
+            80% { transform: translateY(0); }
+        }
+        
+        .dog-style-guide .shake:hover {
+            animation-name: shake-animation;
+            animation-duration: 0.6s;
+            animation-timing-function: ease-in-out;
+        }
+        
+        @keyframes shake-animation {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(-4px); }
+            40% { transform: translateX(4px); }
+            60% { transform: translateX(-2px); }
+            80% { transform: translateX(2px); }
+            100% { transform: translateX(0); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .dog-style-guide {
+                padding: var(--space-md);
+            }
+
+            .dog-style-guide h1 {
+                font-size: 32px;
+                line-height: 40px;
+            }
+
+            .dog-style-guide h2 {
+                font-size: 28px;
+                line-height: 36px;
+            }
+
+            .dog-style-guide .color-grid, 
+            .dog-style-guide .buttons-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .dog-style-guide .special-examples {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Start of style guide content -->
+    <!-- Start of style guide content - this is what you should paste into WordPress -->
     <div class="dog-style-guide">
         <h1>Natural Dog Supplement Company</h1>
         <p>Website Style Guide</p>

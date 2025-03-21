@@ -1,0 +1,587 @@
+/* Universal Stylesheet for NutraWag */
+
+/* ===================
+   Variables
+=================== */
+:root {
+    /* Primary Colors */
+    --navy: #2e355c;
+    --gray: #8c8a91;
+    
+    /* Secondary Colors */
+    --cream: #f7f6f2;
+    --pale-blue: #e6e9f0;
+    --beige: #e8e0d5;
+    
+    /* Accent Colors */
+    --mint: #c2d8cd;
+    --terracotta: #d9a282;
+    --lavender: #d8d6e5;
+    
+    /* Text Colors */
+    --dark-text: #2b2d42;
+    --medium-text: #585763;
+    --light-text: #ffffff;
+    
+    /* Functional Colors */
+    --success: #7cb797;
+    --error: #e07a5f;
+    --info: #81a4cd;
+    --sale: #d9794e;
+    
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-xxl: 48px;
+    --space-xxxl: 64px;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-pill: 999px;
+}
+
+/* ===================
+   Base Styles
+=================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Futura', 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--cream);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===================
+   Typography
+=================== */
+h1, h2, h3, h4, h5 {
+    font-family: 'Le Monde Courrier Std 2', 'Courier New', monospace;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+    color: var(--navy);
+}
+
+h1 {
+    font-size: 42px;
+    line-height: 48px;
+    letter-spacing: -0.5px;
+    margin-bottom: var(--space-xl);
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.3px;
+    margin-top: var(--space-xxl);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-xs);
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background: var(--sale);
+    border-radius: var(--radius-pill);
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+h5 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+}
+
+p {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    margin-bottom: var(--space-md);
+}
+
+small {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* ===================
+   Product Page Styles
+=================== */
+.fusion-page-title-bar {
+    display: none;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--light-text);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.product-image {
+    flex: 0 0 50%;
+    padding: 30px 30px 15px 30px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, var(--cream), var(--pale-blue));
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.product-image img:hover {
+    transform: scale(1.02);
+}
+
+.feature-icons {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 20px;
+    margin-top: 20px;
+    border-top: 1px solid var(--pale-blue);
+    background: linear-gradient(135deg, var(--cream), var(--pale-blue));
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.feature-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 22%;
+    background-color: var(--light-text);
+    border-radius: var(--radius-md);
+    padding: 15px 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+}
+
+.feature-icon .icon {
+    height: 48px;
+    width: 48px;
+    color: var(--navy);
+    margin-bottom: 12px;
+    padding: 8px;
+    background-color: rgba(46, 53, 92, 0.08);
+    border-radius: 50%;
+}
+
+.feature-icon span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--medium-text);
+}
+
+.product-details {
+    flex: 0 0 50%;
+    padding: 40px;
+}
+
+.product-badge {
+    display: inline-block;
+    background-color: var(--mint);
+    color: var(--navy);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.product-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--navy);
+}
+
+.product-price {
+    font-family: 'Le Monde Courrier Std 2', 'Courier New', monospace;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.product-description {
+    color: var(--medium-text);
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.benefits-title {
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.benefits-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.benefits-list li {
+    list-style: none;
+    position: relative;
+    padding-left: 25px;
+    font-size: 0.95rem;
+}
+
+.benefits-list li:before {
+    content: "\f058";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--navy);
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    background: var(--pale-blue);
+    border-radius: var(--radius-md);
+    padding: 10px 15px;
+}
+
+.quantity-selector label {
+    font-weight: 600;
+    margin-right: 15px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--pale-blue);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: var(--light-text);
+}
+
+.quantity-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--pale-blue);
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.quantity-btn:hover {
+    background: var(--lavender);
+}
+
+.quantity-input {
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    -moz-appearance: textfield;
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 15px;
+    background: var(--navy);
+    color: var(--light-text);
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: 'Futura', 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.add-to-cart:hover {
+    background: #3a4275; /* Slightly lighter navy */
+}
+
+.add-to-cart i {
+    margin-right: 10px;
+}
+
+.accordion {
+    border: 1px solid var(--pale-blue);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--pale-blue);
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: 600;
+    background: var(--light-text);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.accordion-header:hover {
+    background: var(--pale-blue);
+}
+
+.accordion-content {
+    padding: 20px;
+    background: var(--pale-blue);
+    display: none;
+}
+
+.accordion-content.active {
+    display: block;
+}
+
+.accordion-content ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.accordion-content li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+}
+
+.accordion-content li:before {
+    content: "\f111";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.5rem;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    color: var(--navy);
+}
+
+.guarantee-box {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px dashed var(--mint);
+    border-radius: var(--radius-md);
+    background-color: rgba(194, 216, 205, 0.1);
+    margin-top: 20px;
+}
+
+.guarantee-icon {
+    color: var(--navy);
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+.guarantee-text {
+    font-size: 0.9rem;
+}
+
+.guarantee-text strong {
+    display: block;
+    margin-bottom: 3px;
+}
+
+/* ===================
+   Style Guide Elements (if needed)
+=================== */
+.dog-style-guide {
+    font-family: 'Futura', 'Trebuchet MS', sans-serif;
+    line-height: 1.5;
+    color: var(--dark-text);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.section {
+    margin-bottom: var(--space-xxl);
+    padding: var(--space-lg);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(46, 53, 92, 0.08);
+}
+
+/* Buttons from Style Guide */
+.button-primary, 
+.button-secondary, 
+.button-tertiary, 
+.button-outline, 
+.button-shadow {
+    text-decoration: none;
+    font-family: 'Futura', 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    border-radius: var(--radius-sm);
+}
+
+.button-primary {
+    background-color: var(--navy);
+    color: var(--light-text);
+    border: none;
+    padding: 12px 24px;
+    transition: background-color 0.2s;
+}
+
+.button-primary:hover {
+    background-color: #3a4275;
+}
+
+.button-secondary {
+    background-color: transparent;
+    color: var(--navy);
+    border: 2px solid var(--navy);
+    padding: 10px 24px;
+    transition: background-color 0.2s;
+}
+
+.button-secondary:hover {
+    background-color: rgba(46, 53, 92, 0.1);
+    box-shadow: 0 3px 8px rgba(46, 53, 92, 0.15);
+}
+
+/* ===================
+   Responsive Styles
+=================== */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+    }
+    
+    .product-image, .product-details {
+        flex: 0 0 100%;
+    }
+    
+    .benefits-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-icons {
+        padding: 15px 10px;
+        flex-wrap: wrap;
+    }
+    
+    .feature-icon {
+        width: 48%;
+        margin-bottom: 10px;
+        padding: 12px 8px;
+    }
+    
+    .feature-icon .icon {
+        height: 40px;
+        width: 40px;
+        padding: 6px;
+    }
+    
+    .feature-icon span {
+        font-size: 0.75rem;
+    }
+    
+    .product-image {
+        padding: 20px 20px 10px 20px;
+    }
+    
+    .feature-icons {
+        flex-wrap: wrap;
+        padding: 15px 10px;
+    }
+    
+    h1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    h2 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    
+    .product-title {
+        font-size: 2rem;
+    }
+}
