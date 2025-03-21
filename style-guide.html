@@ -3,381 +3,592 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natural Dog Supplement Company - Style Guide</title>
+    <title>NutraWag - Style Guide</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="/css/universal-stylesheet.css" rel="stylesheet">
+    <style>
+        /* Additional styles for the style guide display */
+        .style-guide-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: var(--cream);
+        }
+        
+        .style-card {
+            background: var(--light-text);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0 30px;
+        }
+        
+        .color-swatch {
+            height: 100px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .color-info {
+            width: 100%;
+            padding: 10px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+        }
+        
+        .color-dark-info {
+            background: rgba(0,0,0,0.7);
+            color: white;
+        }
+        
+        .color-name {
+            font-weight: 600;
+        }
+        
+        .color-hex {
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+        
+        .button-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .button-example {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .button-label {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--medium-text);
+        }
+        
+        .typography-examples {
+            margin: 20px 0 30px;
+        }
+        
+        .font-family {
+            margin-bottom: 30px;
+        }
+        
+        .font-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .font-usage {
+            color: var(--medium-text);
+            margin-bottom: 15px;
+        }
+        
+        .ui-components {
+            margin-top: 40px;
+        }
+        
+        .component-example {
+            margin-bottom: 40px;
+            border: 1px solid var(--pale-blue);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+        
+        .component-preview {
+            padding: 30px;
+            background: white;
+            border-bottom: 1px solid var(--pale-blue);
+        }
+        
+        .component-code {
+            padding: 15px;
+            background: #f5f7f9;
+            font-family: monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+        
+        .spacing-examples {
+            margin: 30px 0;
+        }
+        
+        .spacing-box {
+            margin-bottom: 20px;
+        }
+        
+        .spacing-visual {
+            background: var(--navy);
+            height: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .spacing-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+        
+        .feature-icons-demo {
+            background: linear-gradient(135deg, var(--cream), var(--pale-blue));
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .accordion-demo {
+            margin: 30px 0;
+        }
+    </style>
 </head>
 <body>
-    <!-- Start of style guide content -->
-    <div class="dog-style-guide">
-        <h1>Natural Dog Supplement Company</h1>
-        <p>Website Style Guide</p>
-
-        <section class="section" id="typography">
+    <div class="style-guide-container">
+        <h1>NutraWag Style Guide</h1>
+        <p>This guide outlines the visual elements and components used across the NutraWag product line.</p>
+        
+        <!-- Typography Section -->
+        <div class="style-card">
             <h2>Typography</h2>
-            
-            <div class="typography-example">
-                <div class="font-info">
-                    <div class="font-name">Le Monde Courrier Std 2</div>
-                    <div class="font-usage">Used for all headings and titles</div>
-                </div>
-                
-                <div class="heading-examples">
+            <div class="typography-examples">
+                <div class="font-family">
+                    <div class="font-name">Lemonde-courrier</div>
+                    <div class="font-usage">Used for headings and product titles</div>
+                    
                     <h1>H1: Main Page Titles (42px)</h1>
                     <h2>H2: Section Headers (32px)</h2>
                     <h3>H3: Content Headers (24px)</h3>
                     <h4>H4: Subheadings (20px)</h4>
                     <h5>H5: Small Headers (18px)</h5>
                 </div>
-            </div>
-            
-            <div class="typography-example">
-                <div class="font-info">
-                    <div class="font-name">Futura</div>
-                    <div class="font-usage">Used for body text and general content</div>
-                </div>
                 
-                <div class="body-examples">
-                    <p>Primary body text is 16px with 24px line height. This is used for most of the content on the website, providing good readability while maintaining a clean and professional appearance.</p>
-                    <small>Secondary body text is 14px with 20px line height. This smaller text is used for things like product descriptions, disclaimers, and other supplementary information.</small>
+                <div class="font-family">
+                    <div class="font-name">Tahoma, Geneva, sans-serif</div>
+                    <div class="font-usage">Used for body text and product descriptions</div>
+                    
+                    <p>Primary body text is 16px with 24px line height. This font is used for product descriptions, benefits, and general content.</p>
+                    <small>Secondary body text is 14px with 20px line height. Used for smaller text elements like feature descriptions and accordion content.</small>
                 </div>
             </div>
-            
-            <div class="typography-example" style="border-bottom: none;">
-                <div class="font-info">
-                    <div class="font-name">Special Text Styles</div>
-                    <div class="font-usage">Used for specific UI elements</div>
-                </div>
-                
-                <div class="special-examples">
-                    <div class="special-text-example">
-                        <div style="font-family: 'Futura', 'Trebuchet MS', sans-serif; font-weight: 500; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--navy);">
-                            BUTTON TEXT
-                        </div>
-                        <small>Futura Medium, 14px, uppercase, tracking +1px</small>
-                    </div>
-                    
-                    <div class="special-text-example">
-                        <div style="font-family: 'Futura', 'Trebuchet MS', sans-serif; font-weight: 500; font-size: 16px; letter-spacing: 0.5px; color: var(--navy);">
-                            Navigation Text
-                        </div>
-                        <small>Futura Medium, 16px, tracking +0.5px</small>
-                    </div>
-                    
-                    <div class="special-text-example">
-                        <div style="font-family: 'Le Monde Courrier Std 2', 'Courier New', monospace; font-weight: 500; font-size: 20px; color: var(--navy);">
-                            $29.99
-                        </div>
-                        <small>Le Monde Courrier, Medium, 20px (Product Price)</small>
-                    </div>
-                    
-                    <div class="special-text-example">
-                        <div style="font-family: 'Le Monde Courrier Std 2', 'Courier New', monospace; font-weight: 700; font-size: 16px; text-transform: uppercase; color: var(--sale);">
-                            SALE 15% OFF
-                        </div>
-                        <small>Le Monde Courrier, Bold, 16px, uppercase (Sale/Discount)</small>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="colors">
+        </div>
+        
+        <!-- Color Palette Section -->
+        <div class="style-card">
             <h2>Color Palette</h2>
             
-            <div class="color-category">
-                <h3>Primary Colors</h3>
-                <div class="color-grid">
-                    <div>
-                        <div class="color-swatch" style="background-color: #2e355c;">
-                            <div class="color-info">
-                                <div class="color-name">Navy Blue</div>
-                                <div class="color-hex">#2e355c</div>
-                            </div>
+            <h3>Primary Colors</h3>
+            <div class="color-grid">
+                <div>
+                    <div class="color-swatch" style="background-color: var(--navy);">
+                        <div class="color-info color-dark-info">
+                            <div class="color-name">Navy</div>
+                            <div class="color-hex">#2e355c</div>
                         </div>
-                        <small>Primary brand color for buttons, key headings, footer</small>
                     </div>
-                    
-                    <div>
-                        <div class="color-swatch" style="background-color: #8c8a91;">
-                            <div class="color-info">
-                                <div class="color-name">Gray</div>
-                                <div class="color-hex">#8c8a91</div>
-                            </div>
+                    <small>Used for headings, buttons, and primary UI elements</small>
+                </div>
+                
+                <div>
+                    <div class="color-swatch" style="background-color: var(--gray);">
+                        <div class="color-info color-dark-info">
+                            <div class="color-name">Gray</div>
+                            <div class="color-hex">#8c8a91</div>
                         </div>
-                        <small>Navigation, secondary text, borders</small>
                     </div>
+                    <small>Used for secondary text and borders</small>
                 </div>
             </div>
             
-            <div class="color-category">
-                <h3>Secondary Colors</h3>
-                <div class="color-grid">
-                    <div>
-                        <div class="color-swatch" style="background-color: #f7f6f2; border: 1px solid #e6e9f0;">
-                            <div class="color-info">
-                                <div class="color-name">Soft Cream</div>
-                                <div class="color-hex">#f7f6f2</div>
-                            </div>
+            <h3>Secondary Colors</h3>
+            <div class="color-grid">
+                <div>
+                    <div class="color-swatch" style="background-color: var(--cream);">
+                        <div class="color-info">
+                            <div class="color-name">Cream</div>
+                            <div class="color-hex">#f7f6f2</div>
                         </div>
-                        <small>Primary background color</small>
                     </div>
-                    
-                    <div>
-                        <div class="color-swatch" style="background-color: #e6e9f0; border: 1px solid #e6e9f0;">
-                            <div class="color-info">
-                                <div class="color-name">Pale Blue</div>
-                                <div class="color-hex">#e6e9f0</div>
-                            </div>
+                    <small>Main background color</small>
+                </div>
+                
+                <div>
+                    <div class="color-swatch" style="background-color: var(--pale-blue);">
+                        <div class="color-info">
+                            <div class="color-name">Pale Blue</div>
+                            <div class="color-hex">#e6e9f0</div>
                         </div>
-                        <small>Secondary background, cards, hover states</small>
                     </div>
-                    
-                    <div>
-                        <div class="color-swatch" style="background-color: #e8e0d5; border: 1px solid #e6e9f0;">
-                            <div class="color-info">
-                                <div class="color-name">Warm Beige</div>
-                                <div class="color-hex">#e8e0d5</div>
-                            </div>
+                    <small>Secondary backgrounds, hover states</small>
+                </div>
+                
+                <div>
+                    <div class="color-swatch" style="background-color: var(--beige);">
+                        <div class="color-info">
+                            <div class="color-name">Beige</div>
+                            <div class="color-hex">#e8e0d5</div>
                         </div>
-                        <small>Accent backgrounds, callout sections</small>
                     </div>
+                    <small>Accent backgrounds</small>
                 </div>
             </div>
             
-            <div class="color-category">
-                <h3>Accent Colors</h3>
-                <div class="color-grid">
-                    <div>
-                        <div class="color-swatch" style="background-color: #c2d8cd;">
-                            <div class="color-info">
-                                <div class="color-name">Mint Green</div>
-                                <div class="color-hex">#c2d8cd</div>
-                            </div>
+            <h3>Accent Colors</h3>
+            <div class="color-grid">
+                <div>
+                    <div class="color-swatch" style="background-color: var(--mint);">
+                        <div class="color-info">
+                            <div class="color-name">Mint</div>
+                            <div class="color-hex">#c2d8cd</div>
                         </div>
-                        <small>Highlights, success messages, "natural" emphasis</small>
                     </div>
-                    
-                    <div>
-                        <div class="color-swatch" style="background-color: #d9a282;">
-                            <div class="color-info">
-                                <div class="color-name">Terracotta</div>
-                                <div class="color-hex">#d9a282</div>
-                            </div>
+                    <small>Natural emphasis elements</small>
+                </div>
+                
+                <div>
+                    <div class="color-swatch" style="background-color: var(--terracotta);">
+                        <div class="color-info">
+                            <div class="color-name">Terracotta</div>
+                            <div class="color-hex">#d9a282</div>
                         </div>
-                        <small>Call-to-action elements, highlights, promotions</small>
                     </div>
-                    
-                    <div>
-                        <div class="color-swatch" style="background-color: #d8d6e5;">
-                            <div class="color-info">
-                                <div class="color-name">Soft Lavender</div>
-                                <div class="color-hex">#d8d6e5</div>
-                            </div>
+                    <small>Call-to-actions, highlights</small>
+                </div>
+                
+                <div>
+                    <div class="color-swatch" style="background-color: var(--lavender);">
+                        <div class="color-info">
+                            <div class="color-name">Lavender</div>
+                            <div class="color-hex">#d8d6e5</div>
                         </div>
-                        <small>Subtle accents, dividers, secondary buttons</small>
                     </div>
+                    <small>Subtle accents</small>
                 </div>
             </div>
             
-            <div class="color-category">
-                <h3>Text Colors</h3>
-                <div class="color-grid">
-                    <div>
-                        <div class="color-swatch" style="background-color: #2b2d42;">
-                            <div class="color-info" style="color: #ffffff;">
-                                <div class="color-name">Dark Text</div>
-                                <div class="color-hex">#2b2d42</div>
-                            </div>
+            <h3>Functional Colors</h3>
+            <div class="color-grid">
+                <div>
+                    <div class="color-swatch" style="background-color: var(--success);">
+                        <div class="color-info">
+                            <div class="color-name">Success</div>
+                            <div class="color-hex">#7cb797</div>
                         </div>
-                        <small>Body text, important information</small>
                     </div>
-                    
-                    <div>
-                        <div class="color-swatch" style="background-color: #585763;">
-                            <div class="color-info" style="color: #ffffff;">
-                                <div class="color-name">Medium Text</div>
-                                <div class="color-hex">#585763</div>
-                            </div>
+                    <small>Success messages</small>
+                </div>
+                
+                <div>
+                    <div class="color-swatch" style="background-color: var(--error);">
+                        <div class="color-info">
+                            <div class="color-name">Error</div>
+                            <div class="color-hex">#e07a5f</div>
                         </div>
-                        <small>Secondary information, descriptions</small>
                     </div>
-                    
-                    <div>
-                        <div class="color-swatch" style="background-color: #ffffff; border: 1px solid #e6e9f0;">
-                            <div class="color-info">
-                                <div class="color-name">Light Text</div>
-                                <div class="color-hex">#ffffff</div>
-                            </div>
+                    <small>Error messages</small>
+                </div>
+                
+                <div>
+                    <div class="color-swatch" style="background-color: var(--sale);">
+                        <div class="color-info">
+                            <div class="color-name">Sale</div>
+                            <div class="color-hex">#d9794e</div>
                         </div>
-                        <small>Text on dark backgrounds</small>
                     </div>
+                    <small>Sale and discount indicators</small>
+                </div>
+                
+                <div>
+                    <div class="color-swatch" style="background-color: #2e7d32;">
+                        <div class="color-info color-dark-info">
+                            <div class="color-name">Add-to-Cart Green</div>
+                            <div class="color-hex">#2e7d32</div>
+                        </div>
+                    </div>
+                    <small>Call-to-action buttons</small>
                 </div>
             </div>
+        </div>
+        
+        <!-- Spacing Section -->
+        <div class="style-card">
+            <h2>Spacing</h2>
+            <p>Consistent spacing helps create visual rhythm and hierarchy throughout the interface.</p>
             
-            <div class="color-category" style="margin-bottom: 0;">
-                <h3>Functional Colors</h3>
-                <div class="color-grid">
-                    <div>
-                        <div class="color-swatch" style="background-color: #7cb797;">
-                            <div class="color-info">
-                                <div class="color-name">Success</div>
-                                <div class="color-hex">#7cb797</div>
-                            </div>
-                        </div>
-                        <small>Success messages and indicators</small>
+            <div class="spacing-examples">
+                <div class="spacing-box">
+                    <div class="spacing-visual" style="width: var(--space-xs);"></div>
+                    <div class="spacing-label">
+                        <span>Extra Small (XS)</span>
+                        <span>4px</span>
                     </div>
-                    
-                    <div>
-                        <div class="color-swatch" style="background-color: #e07a5f;">
-                            <div class="color-info">
-                                <div class="color-name">Error/Alert</div>
-                                <div class="color-hex">#e07a5f</div>
-                            </div>
-                        </div>
-                        <small>Error messages and alerts</small>
+                </div>
+                
+                <div class="spacing-box">
+                    <div class="spacing-visual" style="width: var(--space-sm);"></div>
+                    <div class="spacing-label">
+                        <span>Small (SM)</span>
+                        <span>8px</span>
                     </div>
-                    
-                    <div>
-                        <div class="color-swatch" style="background-color: #81a4cd;">
-                            <div class="color-info">
-                                <div class="color-name">Information</div>
-                                <div class="color-hex">#81a4cd</div>
-                            </div>
-                        </div>
-                        <small>Information messages</small>
+                </div>
+                
+                <div class="spacing-box">
+                    <div class="spacing-visual" style="width: var(--space-md);"></div>
+                    <div class="spacing-label">
+                        <span>Medium (MD)</span>
+                        <span>16px</span>
                     </div>
-                    
-                    <div>
-                        <div class="color-swatch" style="background-color: #d9794e;">
-                            <div class="color-info">
-                                <div class="color-name">Sale/Discount</div>
-                                <div class="color-hex">#d9794e</div>
-                            </div>
-                        </div>
-                        <small>Sale and discount indicators</small>
+                </div>
+                
+                <div class="spacing-box">
+                    <div class="spacing-visual" style="width: var(--space-lg);"></div>
+                    <div class="spacing-label">
+                        <span>Large (LG)</span>
+                        <span>24px</span>
+                    </div>
+                </div>
+                
+                <div class="spacing-box">
+                    <div class="spacing-visual" style="width: var(--space-xl);"></div>
+                    <div class="spacing-label">
+                        <span>Extra Large (XL)</span>
+                        <span>32px</span>
+                    </div>
+                </div>
+                
+                <div class="spacing-box">
+                    <div class="spacing-visual" style="width: var(--space-xxl);"></div>
+                    <div class="spacing-label">
+                        <span>2X Large (XXL)</span>
+                        <span>48px</span>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="section" id="buttons">
+        </div>
+        
+        <!-- UI Elements Section -->
+        <div class="style-card">
             <h2>UI Elements</h2>
             
+            <!-- Buttons -->
             <h3>Buttons</h3>
-            <div class="buttons-grid">
-                <div class="button-container">
-                    <a href="#" class="button-primary">Primary Button</a>
-                    <div class="button-label">Primary Button</div>
+            <div class="button-examples">
+                <div class="button-example">
+                    <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                    <div class="button-label">Primary Action Button</div>
                 </div>
                 
-                <div class="button-container">
-                    <a href="#" class="button-secondary">Secondary Button</a>
+                <div class="button-example">
+                    <button class="button-primary">Primary Button</button>
+                    <div class="button-label">Standard Primary Button</div>
+                </div>
+                
+                <div class="button-example">
+                    <button class="button-secondary">Secondary Button</button>
                     <div class="button-label">Secondary Button</div>
                 </div>
-                
-                <div class="button-container">
-                    <a href="#" class="button-tertiary">Tertiary Button</a>
-                    <div class="button-label">Tertiary Button</div>
-                </div>
-                
-                <div class="button-container">
-                    <a href="#" class="button-outline">Outline Button</a>
-                    <div class="button-label">Outline Button</div>
-                </div>
-                
-                <div class="button-container">
-                    <a href="#" class="button-shadow">Shadow Button</a>
-                    <div class="button-label">Shadow Button</div>
-                </div>
             </div>
-        </section>
-
-        <section class="section" id="icons">
-            <h2>Icons</h2>
             
-            <p>Icons should follow these guidelines:</p>
-            <ul style="margin-bottom: var(--space-lg); padding-left: var(--space-xl);">
-                <li>Simple, outlined icons with 2px stroke weight</li>
-                <li>Corner radius of 2px for square icons</li>
-                <li>Consistent visual weight and style</li>
-                <li>Base size of 24px (16px for smaller elements)</li>
+            <!-- Product Badge -->
+            <h3>Product Badge</h3>
+            <div class="component-example">
+                <div class="component-preview">
+                    <span class="product-badge">Veterinarian Approved</span>
+                </div>
+                <div class="component-code">&lt;span class="product-badge"&gt;Veterinarian Approved&lt;/span&gt;</div>
+            </div>
+            
+            <!-- Feature Icons -->
+            <h3>Feature Icons</h3>
+            <div class="component-example">
+                <div class="component-preview feature-icons-demo">
+                    <div class="feature-icon">
+                        <svg height="50" viewBox="0 0 480.005 480.005" width="50" xmlns="http://www.w3.org/2000/svg"><path d="M439.746 185.005h-56.18c11.32-30.48 21.53-61.45 30.57-92.84 4.22-14.66-3.1-30.18-17.05-36.33-13.96-6.16-30.35-1.09-38.33 11.92a1302 1302 0 0 0-63.85 117.25H43.746c-8.84 0-16 7.16-16 16v16c0 8.84 7.16 16 16 16h12v33.05c0 66.52 42.47 123.13 101.78 144.18-10.23 11.86-18.64 25-24.91 39.2-4.68 10.63 2.99 22.57 14.6 22.57h189.06c11.61 0 19.28-11.94 14.6-22.57-6.27-14.2-14.68-27.34-24.91-39.2 59.31-21.05 101.78-77.66 101.78-144.18v-33.05h12c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16" fill="#d1ffdc"></path><g fill="#2f7d32"><path d="M439.746 177.005H307.713c17.694-35.948 37.117-71.244 57.866-105.072 5.849-9.535 18.008-13.31 28.275-8.782 10.271 4.529 15.684 16.05 12.59 26.798a1291 1291 0 0 1-15.022 48.541 8 8 0 1 0 15.187 5.031 1304 1304 0 0 0 15.21-49.146c5.299-18.404-3.949-38.122-21.51-45.865-17.561-7.742-38.355-1.269-48.369 15.057-22.365 36.461-43.206 74.606-62.03 113.438H43.746c-13.234 0-24 10.766-24 24v16c0 13.234 10.766 24 24 24h4v25.048c0 64.275 38.446 122.255 96.743 147.625-7.698 10.195-14.144 21.092-19.189 32.531-7.018 15.911 4.539 33.795 21.914 33.795H336.28c17.388 0 28.927-17.894 21.912-33.795a161 161 0 0 0-4.732-9.809 8 8 0 1 0-14.166 7.437 145 145 0 0 1 4.26 8.83c2.371 5.377-1.467 11.338-7.273 11.338H147.213c-5.811 0-9.644-5.964-7.274-11.338 5.865-13.297 13.82-25.815 23.644-37.208 3.67-4.256 1.887-10.891-3.383-12.764-57.692-20.477-96.454-75.39-96.454-136.642v-33.048a8 8 0 0 0-8-8h-12c-4.411 0-8-3.589-8-8v-16c0-4.411 3.589-8 8-8h396c4.411 0 8 3.588 8 8v16c0 4.411-3.589 8-8 8H106.635a8 8 0 0 0 0 16h333.111c13.233 0 24-10.766 24-24v-16c0-13.234-10.767-24-24-24"></path></g></svg>
+                        <span>All Natural</span>
+                    </div>
+                </div>
+                <div class="component-code">&lt;div class="feature-icon"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+    &lt;span&gt;All Natural&lt;/span&gt;
+&lt;/div&gt;</div>
+            </div>
+            
+            <!-- Benefits List -->
+            <h3>Benefits List</h3>
+            <div class="component-example">
+                <div class="component-preview">
+                    <h3 class="benefits-title">Key Benefits:</h3>
+                    <ul class="benefits-list">
+                        <li>Supports urinary tract health</li>
+                        <li>Reduces inflammation</li>
+                    </ul>
+                </div>
+                <div class="component-code">&lt;h3 class="benefits-title"&gt;Key Benefits:&lt;/h3&gt;
+&lt;ul class="benefits-list"&gt;
+    &lt;li&gt;Supports urinary tract health&lt;/li&gt;
+    &lt;li&gt;Reduces inflammation&lt;/li&gt;
+&lt;/ul&gt;</div>
+            </div>
+            
+            <!-- Quantity Selector -->
+            <h3>Quantity Selector</h3>
+            <div class="component-example">
+                <div class="component-preview">
+                    <div class="quantity-selector">
+                        <label for="quantity-demo">Quantity:</label>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn decrease-btn">-</button>
+                            <input type="number" id="quantity-demo" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn increase-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="component-code">&lt;div class="quantity-selector"&gt;
+    &lt;label for="quantity"&gt;Quantity:&lt;/label&gt;
+    &lt;div class="quantity-controls"&gt;
+        &lt;button class="quantity-btn decrease-btn"&gt;-&lt;/button&gt;
+        &lt;input type="number" id="quantity" class="quantity-input" value="1" min="1"&gt;
+        &lt;button class="quantity-btn increase-btn"&gt;+&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+            </div>
+            
+            <!-- Guarantee Box -->
+            <h3>Guarantee Box</h3>
+            <div class="component-example">
+                <div class="component-preview">
+                    <div class="guarantee-box">
+                        <div class="guarantee-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="guarantee-text">
+                            <strong>100% Satisfaction Guarantee</strong>
+                            If your pet doesn't respond well to our product, we'll refund your purchase within 30 days.
+                        </div>
+                    </div>
+                </div>
+                <div class="component-code">&lt;div class="guarantee-box"&gt;
+    &lt;div class="guarantee-icon"&gt;
+        &lt;i class="fas fa-shield-alt"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class="guarantee-text"&gt;
+        &lt;strong&gt;100% Satisfaction Guarantee&lt;/strong&gt;
+        If your pet doesn't respond well to our product, we'll refund your purchase within 30 days.
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+            </div>
+            
+            <!-- Accordion -->
+            <h3>Accordion</h3>
+            <div class="component-example">
+                <div class="component-preview accordion-demo">
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                Ingredients
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>Cranberry Extract</li>
+                                    <li>D-Mannose</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="component-code">&lt;div class="accordion"&gt;
+    &lt;div class="accordion-item"&gt;
+        &lt;button class="accordion-header"&gt;
+            Ingredients
+            &lt;i class="fas fa-chevron-down"&gt;&lt;/i&gt;
+        &lt;/button&gt;
+        &lt;div class="accordion-content"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Cranberry Extract&lt;/li&gt;
+                &lt;li&gt;D-Mannose&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+            </div>
+        </div>
+        
+        <!-- Responsive Design Section -->
+        <div class="style-card">
+            <h2>Responsive Design</h2>
+            <p>The NutraWag website is designed to be fully responsive, with breakpoints at the following widths:</p>
+            
+            <ul>
+                <li><strong>Mobile:</strong> Up to 768px</li>
+                <li><strong>Tablet:</strong> 769px to 1024px</li>
+                <li><strong>Desktop:</strong> 1025px and above</li>
             </ul>
             
-            <h3>Icon States & Sizes</h3>
-            
-            <div class="icon-sizes">
-                <div class="icon-size-example">
-                    <div class="icon-circle circle-xs">
-                        <i class="fas fa-paw icon-xs"></i>
-                    </div>
-                    <div class="icon-label">XS - 16px</div>
-                </div>
-                
-                <div class="icon-size-example">
-                    <div class="icon-circle circle-sm">
-                        <i class="fas fa-paw icon-sm"></i>
-                    </div>
-                    <div class="icon-label">SM - 20px</div>
-                </div>
-                
-                <div class="icon-size-example">
-                    <div class="icon-circle circle-md">
-                        <i class="fas fa-paw icon-md"></i>
-                    </div>
-                    <div class="icon-label">MD - 24px</div>
-                </div>
-                
-                <div class="icon-size-example">
-                    <div class="icon-circle circle-lg">
-                        <i class="fas fa-paw icon-lg"></i>
-                    </div>
-                    <div class="icon-label">LG - 32px</div>
-                </div>
-                
-                <div class="icon-size-example">
-                    <div class="icon-circle circle-xl">
-                        <i class="fas fa-paw icon-xl"></i>
-                    </div>
-                    <div class="icon-label">XL - 48px</div>
-                </div>
-            </div>
-            
-            <h3 style="margin-top: var(--space-xxl);">Icon Hover Animations</h3>
-            <p>Hover over each icon to see its animation effect.</p>
-            
-            <div class="icon-animations">
-                <div class="animation-example">
-                    <i class="fas fa-bone icon-anim grow"></i>
-                    <div class="icon-label">Grow</div>
-                </div>
-                
-                <div class="animation-example">
-                    <i class="fas fa-heart icon-anim rotate"></i>
-                    <div class="icon-label">Rotate</div>
-                </div>
-                
-                <div class="animation-example">
-                    <i class="fas fa-seedling icon-anim pulse"></i>
-                    <div class="icon-label">Pulse</div>
-                </div>
-                
-                <div class="animation-example">
-                    <i class="fas fa-dog icon-anim color-shift"></i>
-                    <div class="icon-label">Color Shift</div>
-                </div>
-                
-                <div class="animation-example">
-                    <i class="fas fa-bone icon-anim bounce"></i>
-                    <div class="icon-label">Bounce</div>
-                </div>
-                
-                <div class="animation-example">
-                    <i class="fas fa-shield-alt icon-anim shake"></i>
-                    <div class="icon-label">Shake</div>
-                </div>
-            </div>
-        </section>
+            <p>Key responsive changes include:</p>
+            <ul>
+                <li>Feature icons stack in a 2x2 grid on mobile</li>
+                <li>Product container switches to a column layout on mobile</li>
+                <li>Benefits list changes from 2 columns to 1 column on mobile</li>
+                <li>Font sizes and spacing are reduced proportionally on smaller screens</li>
+            </ul>
+        </div>
     </div>
-    <!-- End of style guide content -->
+    
+    <script>
+        // Simple accordion functionality for the demo
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    content.classList.toggle('active');
+                    
+                    if (content.classList.contains('active')) {
+                        icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                    } else {
+                        icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                    }
+                });
+            });
+            
+            // Quantity selector demo functionality
+            const quantityInput = document.querySelector('#quantity-demo');
+            const decreaseBtn = document.querySelector('.decrease-btn');
+            const increaseBtn = document.querySelector('.increase-btn');
+
+            decreaseBtn.addEventListener('click', function() {
+                let value = parseInt(quantityInput.value);
+                if (value > 1) {
+                    quantityInput.value = value - 1;
+                }
+            });
+
+            increaseBtn.addEventListener('click', function() {
+                let value = parseInt(quantityInput.value);
+                quantityInput.value = value + 1;
+            });
+        });
+    </script>
 </body>
 </html>
