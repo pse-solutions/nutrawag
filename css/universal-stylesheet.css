@@ -199,6 +199,8 @@ small {
     transform: scale(1.02);
 }
 
+/* CSS updates for feature icons */
+
 .feature-icons {
     display: flex;
     justify-content: space-between;
@@ -213,11 +215,12 @@ small {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Added for better vertical centering */
     text-align: center;
     width: 22%;
     background-color: var(--light-text);
     border-radius: var(--radius-md);
-    padding: 15px 10px;
+    padding: 10px 10px; /* Increased vertical padding */
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -227,20 +230,41 @@ small {
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
 }
 
-.feature-icon .icon {
-    height: 48px;
-    width: 48px;
-    color: var(--navy);
-    margin-bottom: 12px;
-    padding: 8px;
-    background-color: rgba(46, 53, 92, 0.08);
-    border-radius: 50%;
+/* Center SVG icons properly */
+.feature-icon svg {
+    display: block;
+    margin: 0 auto 5px; /* Increased bottom margin for better spacing */
+    height: 50px;
+    width: 50px;
 }
 
 .feature-icon span {
-    font-size: 0.85rem;
+    font-size: 0.88rem; /* Slightly larger font */
     font-weight: 600;
+    line-height: 1.3; /* Better line height for readability */
     color: var(--medium-text);
+    margin-top: 6px; /* Added top margin for spacing from icon */
+    padding: 0 4px; /* Added horizontal padding for text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .feature-icons {
+        padding: 15px 10px;
+        flex-wrap: wrap;
+    }
+    
+    .feature-icon {
+        width: 48%;
+        margin-bottom: 10px;
+        padding: 15px 10px;
+    }
+    
+    .feature-icon svg {
+        height: 45px;
+        width: 45px;
+        margin-bottom: 10px;
+    }
 }
 
 .product-details {
