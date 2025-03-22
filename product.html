@@ -61,6 +61,60 @@
             line-height: 1.4;
         }
         
+        /* Dosage Chart Styles */
+        .dosage-chart {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 15px 0;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .dosage-chart thead {
+            background-color: var(--navy);
+            color: var(--light-text);
+        }
+
+        .dosage-chart th {
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .dosage-chart td {
+            padding: 10px 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 14px;
+        }
+
+        .dosage-chart tbody tr {
+            background-color: var(--light-text);
+            transition: background-color 0.2s ease;
+        }
+
+        .dosage-chart tbody tr:hover {
+            background-color: var(--cream);
+        }
+
+        .dosage-chart tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .size-column {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .dosage-column {
+            font-weight: 600;
+            color: #2f7d32;
+        }
+
+        /* Responsive styles for smaller screens */
         @media (max-width: 768px) {
             .ingredient-item {
                 padding: 8px;
@@ -70,6 +124,55 @@
                 width: 40px;
                 height: 40px;
                 margin-right: 10px;
+            }
+            
+            .dosage-chart {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .dosage-chart thead {
+                display: none; /* Hide the header on small screens */
+            }
+            
+            .dosage-chart tbody, .dosage-chart tr, .dosage-chart td {
+                display: block;
+                width: 100%;
+            }
+            
+            .dosage-chart tr {
+                margin-bottom: 15px;
+                border-radius: var(--radius-md);
+                overflow: hidden;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            
+            .dosage-chart td {
+                text-align: right;
+                padding: 10px 15px;
+                position: relative;
+                padding-left: 50%;
+            }
+            
+            .dosage-chart td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 15px;
+                width: 45%;
+                text-align: left;
+                font-weight: 600;
+                color: var(--navy);
+            }
+            
+            .dosage-chart td.size-column {
+                background-color: var(--navy);
+                color: var(--light-text);
+                text-align: center;
+                padding-left: 15px;
+            }
+            
+            .dosage-chart td.size-column::before {
+                display: none;
             }
         }
     </style>
@@ -212,14 +315,53 @@
                         </div>
                     </div>
 
-                    <!-- Dosage Accordion -->
+                    <!-- Dosage Accordion with chart -->
                     <div class="accordion-item">
                         <button class="accordion-header">
                             Dosage
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="accordion-content">
-                            <p>Administer 1 tablet per 20 lbs of body weight daily. Consult with your veterinarian for personalized dosing.</p>
+                            <p>Our Urinary Care+ for Dogs is available as a liquid tincture with a convenient dropper for easy administration. Dosage depends on your dog's weight:</p>
+                            
+                            <table class="dosage-chart">
+                                <thead>
+                                    <tr>
+                                        <th>Dog Size</th>
+                                        <th>Weight Range</th>
+                                        <th>Daily Dosage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="size-column" data-label="Dog Size">Toy</td>
+                                        <td data-label="Weight Range">Up to 10 lbs (4.5 kg)</td>
+                                        <td class="dosage-column" data-label="Daily Dosage">0.5 ml (½ dropper)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="size-column" data-label="Dog Size">Small</td>
+                                        <td data-label="Weight Range">11 – 25 lbs (5 – 11.5 kg)</td>
+                                        <td class="dosage-column" data-label="Daily Dosage">1 ml (1 dropper)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="size-column" data-label="Dog Size">Medium</td>
+                                        <td data-label="Weight Range">26 – 50 lbs (12 – 22.5 kg)</td>
+                                        <td class="dosage-column" data-label="Daily Dosage">2 ml (2 droppers, full serving)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="size-column" data-label="Dog Size">Large</td>
+                                        <td data-label="Weight Range">51 – 90 lbs (23 – 40.8 kg)</td>
+                                        <td class="dosage-column" data-label="Daily Dosage">3 ml (3 droppers)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="size-column" data-label="Dog Size">Giant</td>
+                                        <td data-label="Weight Range">Over 90 lbs (40.8+ kg)</td>
+                                        <td class="dosage-column" data-label="Daily Dosage">4 ml (4 droppers)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <p>For best results, administer directly into your dog's mouth or mix with a small amount of food. Divide into two doses (morning and evening) for optimal results. Consult with your veterinarian for personalized dosing recommendations.</p>
                         </div>
                     </div>
 
